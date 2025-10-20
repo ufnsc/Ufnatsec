@@ -1,7 +1,7 @@
 
-  # Responsive Website Design
+  # UF NatSec Website
 
-  This is a code bundle for Responsive Website Design. The original project is available at https://www.figma.com/design/QsoL07thF72MbJOJxRA1Pd/Responsive-Website-Design.
+  This is a code bundle for UF NatSec. The original project is available at https://www.figma.com/design/QsoL07thF72MbJOJxRA1Pd/Responsive-Website-Design.
 
   ## Running the code
 
