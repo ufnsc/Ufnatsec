@@ -8,6 +8,7 @@ export function GetInvolved() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
+  /*
   const upcomingEvents = [
     {
       title: 'Cybersecurity Workshop',
@@ -24,38 +25,38 @@ export function GetInvolved() {
       date: 'January 20, 2026',
       description: 'Interactive session on intelligence gathering and analytical methodologies.',
     },
-  ];
+  ]; */
 
   const recurringEvents = [
     {
-      title: 'Weekly General Body Meetings',
-      frequency: 'Every Tuesday',
-      description: 'Open meetings for all members to discuss current events, plan activities, and network.',
-    },
-    {
-      title: 'Policy Discussion Roundtables',
+      title: 'Speaker Series',
       frequency: 'Monthly',
-      description: 'Deep-dive discussions on national security policies, defense strategies, and geopolitical issues.',
+      description: 'Connects students with national security professionals from diverse backgrounds.',
     },
     {
-      title: 'Guest Speaker Series',
-      frequency: 'Bi-Monthly',
-      description: 'Industry professionals and government officials share insights on national security careers and trends.',
-    },
-    {
-      title: 'Cybersecurity Workshops',
+      title: 'Experiential Learning Sessions',
       frequency: 'Quarterly',
-      description: 'Technical workshops on cybersecurity tools, threat analysis, and digital defense strategies.',
+      description: 'Students develop critical skills by tackling real-world inspired security challenges.',
     },
     {
-      title: 'Simulation Exercises',
-      frequency: 'Bi-Annually',
-      description: 'Crisis simulation and war-gaming exercises to practice strategic decision-making.',
+      title: 'Professional Development Workshops',
+      frequency: 'Quarterly',
+      description: 'Interactive workshops that focus on equipping students with skills essential for national security roles.',
     },
     {
-      title: 'Networking Social Events',
-      frequency: 'Monthly',
-      description: 'Casual meetups to build community and connect with fellow national security enthusiasts.',
+      title: 'Site Visits & External Engagements',
+      frequency: 'Quarterly',
+      description: 'These programs connect students directly with the national security ecosystem, providing direct exposure to real-world settings.',
+    },
+    {
+      title: 'Competition Events',
+      frequency: 'Bi-Quarterly',
+      description: 'These events encourage students to apply skills in teamwork, communication, and problem-solving to national security challenges.',
+    },
+    {
+      title: 'Community & Discussion Events',
+      frequency: 'Multiple Per Semester',
+      description: 'These gatherings foster collaboration, dialogue, and a deeper understanding of national security topics in a relaxed setting.',
     },
   ];
 
@@ -82,7 +83,7 @@ export function GetInvolved() {
           </p>
         </div>
 
-        {/* Upcoming Events */}
+        {/* Upcoming Events 
         <div className="mb-12 md:mb-16">
           <div className="bg-gradient-to-r from-[#0021A5]/10 to-[#FA4616]/10 rounded-xl p-4 mb-6">
             <h3 className="text-gray-900 text-center md:text-left">
@@ -107,7 +108,7 @@ export function GetInvolved() {
               </Card>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Calendar Integration */}
         <div className="mb-12 md:mb-16">
@@ -211,7 +212,7 @@ export function GetInvolved() {
           </div>
         </div>
 
-        {/* Email Signup */}
+        {/* Email Signup 
         <div className="bg-gradient-to-r from-[#0021A5] to-[#0021A5]/90 rounded-2xl shadow-lg p-6 md:p-8">
           <div className="max-w-xl mx-auto text-center">
             <Mail className="mx-auto mb-4 text-white" size={32} />
@@ -242,7 +243,8 @@ export function GetInvolved() {
               </div>
             )}
           </div>
-        </div>
+        </div> */}
+
       </div>
     </section>
   );
