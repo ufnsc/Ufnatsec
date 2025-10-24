@@ -8,7 +8,7 @@ export function Footer() {
           {/* Tagline */}
           <div className="text-center md:text-left">
             <p className="text-sm opacity-90">
-              Advancing National Security through Innovation and Collaboration.
+              Building Tomorrow's National Security Leaders.
             </p>
           </div>
 
@@ -50,7 +50,7 @@ export function Footer() {
               <Instagram size={20} />
             </a>
             <a
-              href="mailto:contact@ufnatsec.org"
+              href="mailto:anderson.paige@ufl.edu"
               className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
               aria-label="Email"
             >

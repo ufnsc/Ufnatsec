@@ -3,25 +3,26 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 export function Team() {
   const officers = [
     {
-      name: 'Sarah Chen',
+      name: 'Paige Anderson',
       title: 'President',
-      bio: 'Senior majoring in Political Science with a focus on international security policy.',
-      image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMHByb2Zlc3Npb25hbCUyMHBvcnRyYWl0fGVufDF8fHx8MTc2MDc0NzE0M3ww&ixlib=rb-4.1.0&q=80&w=1080',
+      bio: 'Nuclear Engineering graduate student',
+      image: '/PaigeHeadshot.png',
     },
     {
-      name: 'Marcus Johnson',
+      name: 'Joseph Starr',
       title: 'Vice President',
-      bio: 'Computer Science major specializing in cybersecurity and network defense.',
-      image: 'https://images.unsplash.com/photo-1425421669292-0c3da3b8f529?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHBlcnNvbnxlbnwxfHx8fDE3NjA3NTM4MjR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      bio: 'Junior Electrical Engineering student',
+      image: '/JosephHeadshot.png',
     },
     {
-      name: 'Emily Rodriguez',
-      title: 'Events Coordinator',
-      bio: 'International Relations student with expertise in intelligence analysis.',
-      image: 'https://images.unsplash.com/photo-1742119971773-57e0131095b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB0ZWFtJTIwbWVtYmVyfGVufDF8fHx8MTc2MDc0MzI2Nnww&ixlib=rb-4.1.0&q=80&w=1080',
+      name: 'Enrique Medici',
+      title: 'Treasurer',
+      bio: 'Nuclear Engineering graduate student',
+      image: '/EnriqueHeadshot.png',
     },
   ];
 
+  /*
   const advisors = [
     {
       name: 'Dr. Katherine Williams',
@@ -33,7 +34,7 @@ export function Team() {
       title: 'Military Advisor',
       bio: 'Retired Army Colonel with 25 years in defense intelligence.',
     },
-  ];
+  ]; */
 
   return (
     <section id="team" className="bg-[#f0f4ff] py-12 md:py-20">
@@ -69,7 +70,7 @@ export function Team() {
           ))}
         </div>
 
-        {/* Advisors Section */}
+        {/* Advisors Section 
         <div className="pt-12">
           <div className="bg-gradient-to-r from-[#0021A5]/10 to-[#FA4616]/10 rounded-xl p-4 mb-8">
             <h3 className="text-gray-900 text-center">Advisors</h3>
@@ -95,7 +96,7 @@ export function Team() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
