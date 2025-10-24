@@ -23,7 +23,11 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
           <div className="mb-6 md:mb-8">
             <div className="inline-flex items-center justify-center w-28 h-28 md:w-36 md:h-36 bg-gradient-to-br from-[#0021A5]/10 to-[#FA4616]/10 rounded-full shadow-lg border-4 border-white backdrop-blur-sm relative">
               <div className="absolute inset-0 bg-gradient-to-br from-[#0021A5]/5 to-[#FA4616]/5 rounded-full animate-pulse"></div>
-              <span className="text-4xl md:text-5xl relative z-10">🛡️</span>
+                <img
+                  src="/NatSecLogo.png"
+                  alt="UF NatSec Logo"
+                  className="w-28 h-28 md:w-36 md:h-36 object-contain rounded-full shadow-lg border-4 border-white backdrop-blur-sm"
+                />
             </div>
           </div>
 
@@ -32,7 +36,7 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
             UF NatSec
           </h1>
           <p className="text-xl md:text-3xl mb-12 md:mb-16 text-gray-600 max-w-3xl mx-auto">
-            Advancing National Security through Innovation and Collaboration.
+            Building Tomorrow's National Security Leaders
           </p>
 
           {/* CTA Button */}

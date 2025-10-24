@@ -18,11 +18,9 @@ export function Mission({ onLearnMoreClick }: MissionProps) {
           </h3>
           
           <p className="text-lg text-gray-700 leading-relaxed mb-8 max-w-4xl mx-auto">
-            UF NatSec is committed to fostering multidisciplinary collaboration in national 
-            security. We create a dynamic platform where students, faculty, and industry leaders 
-            come together to explore critical security challenges, develop innovative solutions, 
-            and prepare the next generation of national security professionals through research, 
-            dialogue, and hands-on experiences.
+            UF NatSec aims to cultivate a multidisciplinary community of students interested in national security by
+            providing access to professionals and opportunities that develop their skills and empower them to
+            become emerging leaders.
           </p>
           
           <Button
