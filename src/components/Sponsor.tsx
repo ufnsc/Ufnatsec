@@ -45,16 +45,15 @@ export function Sponsor() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  className="bg-white text-[#0021A5] hover:bg-white/90 rounded-xl px-8 py-6 shadow-lg"
-                  onClick={() => alert('Prospectus download would start here')}
-                >
-                  <Download className="mr-2" size={18} />
-                  Download Prospectus
-                </Button>
+                <a href="/UFNatSecProspectus.pdf" download>
+                  <Button className="bg-white text-[#0021A5] hover:bg-white/90 rounded-xl px-8 py-6 shadow-lg">
+                    <Download className="mr-2" size={18} />
+                    Download Prospectus
+                  </Button>
+                </a>
                 <Button
                   className="bg-[#FA4616] hover:bg-[#FA4616]/90 text-white rounded-xl px-8 py-6 shadow-lg"
-                  onClick={() => window.open('https://www.uff.ufl.edu/', '_blank')}
+                  onClick={() => window.open('https://www.uff.ufl.edu/giving-opportunities/027811-florida-institute-for-national-security-excellence-fund/', '_blank')}
                 >
                   <Heart className="mr-2" size={18} />
                   Donate via UF Foundation
@@ -62,7 +61,7 @@ export function Sponsor() {
               </div>
 
               <p className="text-white/70 text-xs md:text-sm mt-6">
-                All donations are tax-deductible and go directly to supporting student programs.
+                All donations go directly to supporting UF NatSec.
               </p>
             </div>
           </div>

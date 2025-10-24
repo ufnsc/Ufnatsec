@@ -1,13 +1,15 @@
 export function Partners() {
   const partners = [
     {
-      name: 'FINS',
-      logo: '🔐',
-    },
+      name: 'Florida Institute for National Security',
+      logo: '/FINSLogoCropped.png',
+    }
+    /*,
     {
       name: 'University of Florida',
       logo: '🐊',
-    },
+    }
+    ,
     {
       name: 'Defense Innovation',
       logo: '🛡️',
@@ -19,7 +21,7 @@ export function Partners() {
     {
       name: 'Tech Partners',
       logo: '💻',
-    },
+    }, */
   ];
 
   return (
