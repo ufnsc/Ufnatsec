@@ -29,7 +29,7 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
             </div>
 
           {/* Tagline */}
-          <h1 className="text-4xl md:text-6xl mb-4 md:mb-6 text-gray-900">
+          <h1 className="text-4xl md:text-6xl mt-6 mb-4 md:mb-6 text-gray-900 text-center">
             UF NatSec
           </h1>
           <p className="text-xl md:text-3xl mb-12 md:mb-16 text-gray-600 max-w-3xl mx-auto">
