@@ -32,7 +32,7 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
           <h1 className="text-4xl md:text-6xl text-gray-900 text-center">
             UF NatSec
           </h1>
-          <p className="text-xl md:text-3xl mb-12 md:mb-16 text-gray-600 max-w-3xl text-center">
+          <p className="text-xl md:text-3xl mb-12 md:mb-16 text-gray-600 max-w-3xl mx-auto">
             Building Tomorrow's National Security Leaders
           </p>
 
