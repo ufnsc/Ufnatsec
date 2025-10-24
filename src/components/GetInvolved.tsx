@@ -50,7 +50,7 @@ export function GetInvolved() {
     },
     {
       title: 'Competition Events',
-      frequency: 'Bi-Quarterly',
+      frequency: 'Quarterly',
       description: 'These events encourage students to apply skills in teamwork, communication, and problem-solving to national security challenges.',
     },
     {
@@ -78,7 +78,7 @@ export function GetInvolved() {
         <div className="bg-gradient-to-r from-[#0021A5] to-[#0021A5]/90 rounded-2xl shadow-lg p-8 md:p-10 mb-12 text-center">
           <h2 className="text-white mb-4">Get Involved</h2>
           <p className="text-white/90 max-w-2xl mx-auto text-lg">
-            Join our community of students and professionals passionate about national 
+            Join our community of students and professionals interested in national
             security. Attend events, connect with peers, and build your expertise.
           </p>
         </div>

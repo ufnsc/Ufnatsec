@@ -26,10 +26,10 @@ export function Contact() {
                 <div>
                   <p className="text-gray-900 mb-1">Email</p>
                   <a
-                    href="mailto:contact@ufnatsec.org"
+                    href="mailto:anderson.paige@ufl.edu"
                     className="text-[#0021A5] hover:underline"
                   >
-                    contact@ufnatsec.org
+                    anderson.paige@ufl.edu
                   </a>
                 </div>
               </div>
@@ -58,10 +58,10 @@ export function Contact() {
                 <div>
                   <p className="text-gray-900 mb-1">Phone</p>
                   <a
-                    href="tel:+13525551234"
+                    href="tel:+16148326794"
                     className="text-[#0021A5] hover:underline"
                   >
-                    (352) 555-1234
+                    (614) 832-6794
                   </a>
                 </div>
               </div>
