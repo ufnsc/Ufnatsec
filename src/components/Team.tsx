@@ -18,7 +18,7 @@ export function Team() {
       name: 'Enrique Medici',
       title: 'Treasurer',
       bio: 'Nuclear Engineering graduate student',
-      image: '/EnriqueHeadshot.png',
+      image: '/EnriqueHeadshotCropped.png',
     },
   ];
 
