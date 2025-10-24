@@ -24,7 +24,7 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
                 <img
                   src="/NatSecLogo.png"
                   alt="UF NatSec Logo"
-                  className="w-32 h-32 md:w-40 md:h-40"
+                  className="w-34 h-34 md:w-42 md:h-42"
                 />
             </div>
 
