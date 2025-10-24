@@ -22,14 +22,13 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
           {/* Logo Placeholder */}
           <div className="mb-6 md:mb-8">
             {/*<div className="inline-flex items-center justify-center w-28 h-28 md:w-36 md:h-36 bg-gradient-to-br from-[#0021A5]/10 to-[#FA4616]/10 rounded-full shadow-lg border-4 border-white backdrop-blur-sm relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0021A5]/5 to-[#FA4616]/5 rounded-full animate-pulse"></div> */}
+              <div> className="absolute inset-0 bg-gradient-to-br from-[#0021A5]/5 to-[#FA4616]/5 rounded-full animate-pulse"></div> */}
                 <img
                   src="/NatSecLogo.png"
                   alt="UF NatSec Logo"
                   className="w-40 h-40 md:w-48 md:h-48 object-contain rounded-full shadow-lg border-4 border-white backdrop-blur-sm"
                 />
             </div>
-          </div>
 
           {/* Tagline */}
           <h1 className="text-4xl md:text-6xl mb-4 md:mb-6 text-gray-900">
