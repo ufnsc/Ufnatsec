@@ -45,7 +45,7 @@ export function Sponsor() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/UFNatSecProspectus.pdf" download>
+                <a href="/NatSecProspectus.pdf" download>
                   <Button className="bg-white text-[#0021A5] hover:bg-white/90 rounded-xl px-8 py-6 shadow-lg">
                     <Download className="mr-2" size={18} />
                     Download Prospectus
