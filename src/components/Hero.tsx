@@ -20,16 +20,16 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
         <div className="text-center">
           {/* Logo Placeholder */}
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center space-y-4">
                 <img
                   src="/NatSecLogo.png"
                   alt="UF NatSec Logo"
-                  className="w-36 h-36 md:w-44 md:h-44"
+                  className="w-28 h-28 md:w-36 md:h-36"
                 />
             </div>
 
           {/* Tagline */}
-          <h1 className="text-4xl md:text-6xl mt-6 mb-4 md:mb-6 text-gray-900 text-center">
+          <h1 className="text-4xl md:text-6xl text-gray-900 text-center">
             UF NatSec
           </h1>
           <p className="text-xl md:text-3xl mb-12 md:mb-16 text-gray-600 max-w-3xl mx-auto">
