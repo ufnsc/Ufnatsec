@@ -2,7 +2,7 @@ export function Partners() {
   const partners = [
     {
       name: 'Florida Institute for National Security',
-      logo: '/FINSLogoCropped.png',
+      logo: '/FINSLogo.png',
     }
     /*,
     {
@@ -40,7 +40,7 @@ export function Partners() {
               key={partner.name}
               className="flex flex-col items-center gap-3 p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors min-w-[140px]"
             >
-              <div className="text-4xl">{partner.logo}</div>
+              <img src={partner.logo} alt={partner.name} className="w-24 h-24 object-contain" />
               <p className="text-sm text-gray-700 text-center">{partner.name}</p>
             </div>
           ))}
@@ -53,7 +53,7 @@ export function Partners() {
               key={partner.name}
               className="flex flex-col items-center gap-2 p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors"
             >
-              <div className="text-3xl">{partner.logo}</div>
+              <img src={partner.logo} alt={partner.name} className="w-20 h-20 object-contain" />
               <p className="text-xs text-gray-700 text-center">{partner.name}</p>
             </div>
           ))}
