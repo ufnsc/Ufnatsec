@@ -17,7 +17,7 @@ export function About({ onGetInvolvedClick, onContactClick }: AboutProps) {
     {
       icon: Users,
       title: 'Collaboration',
-      description: 'We believe in the power of diverse perspectives working together toward common goals.',
+      description: 'We unite students from diverse disciplines to bridge perspectives and work towards a shared mission.',
     },
     {
       icon: Lightbulb,
@@ -26,8 +26,8 @@ export function About({ onGetInvolvedClick, onContactClick }: AboutProps) {
     },
     {
       icon: Heart,
-      title: 'Service',
-      description: 'We are dedicated to serving our nation and community through knowledge and action.',
+      title: 'Mentorship & Growth',
+      description: 'We foster a supportive community that prioritizes mentorship, personal development, and professional opportunity.',
     },
   ];
 
