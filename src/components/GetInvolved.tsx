@@ -188,6 +188,7 @@ export function GetInvolved() {
               LinkedIn
             </Button>
             <Button
+            variant="default"
               className="bg-[#4A154B] hover:bg-[#3F0E40]/90 text-white rounded-xl w-full sm:w-auto"
               onClick={() => window.open('https://join.slack.com/t/ufnatsec/shared_invite/zt-3gnhxlssn-JQbxI3jCo2JZjTtX~Dpl8Q', '_blank')}
               aria-label="Slack"
