@@ -15,10 +15,7 @@ export function Sponsor() {
               <h2 className="text-white mb-6">Sponsor Us</h2>
               
               <p className="text-white/90 text-base md:text-lg mb-8 leading-relaxed">
-                Your support enables UF NatSec to host world-class speakers, conduct critical 
-                research, and provide students with unique opportunities in the national security 
-                field. Together, we can prepare the next generation of security leaders and 
-                innovators.
+                Your support enables UF NatSec to educate, inspire, and connect students with national security professionals and opportunities. By partnering with us, you help develop the next generation of national security leaders while showcasing your organization's expertise and commitment to the field.
               </p>
 
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 mb-8 border border-white/20">
@@ -26,19 +23,19 @@ export function Sponsor() {
                 <ul className="text-white/90 text-left space-y-3 max-w-xl mx-auto text-sm md:text-base">
                   <li className="flex items-start gap-3">
                     <span className="text-[#FA4616] mt-1">✓</span>
-                    <span>Support cutting-edge research in national security</span>
+                    <span><strong>Access to Top Talent:</strong> Connect with motivated, skilled students.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#FA4616] mt-1">✓</span>
-                    <span>Connect with talented students passionate about security</span>
+                    <span><strong>Brand Visibility:</strong> Showcase your organization to UF students and faculty.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#FA4616] mt-1">✓</span>
-                    <span>Gain visibility at exclusive events and conferences</span>
+                    <span><strong>Thought Leadership:</strong> Share expertise via panels, workshops, and mentorship.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#FA4616] mt-1">✓</span>
-                    <span>Contribute to developing tomorrow's security professionals</span>
+                    <span><strong>Mission Impact:</strong> Help develop the future national security workforce.</span>
                   </li>
                 </ul>
               </div>
