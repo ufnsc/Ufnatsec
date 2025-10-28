@@ -13,9 +13,6 @@ export function Mission({ onLearnMoreClick }: MissionProps) {
         </div>
         
         <div className="bg-white rounded-2xl shadow-lg p-8 md:p-10 text-center">
-          <h3 className="text-gray-900 mb-6">
-            Bridging Academia, Government, and Industry
-          </h3>
           
           <p className="text-lg text-gray-700 leading-relaxed mb-8 max-w-4xl mx-auto">
             UF NatSec aims to cultivate a multidisciplinary community of students interested in national security by
