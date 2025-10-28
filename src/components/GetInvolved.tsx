@@ -122,7 +122,7 @@ export function GetInvolved() {
             <div className="p-6 md:p-8">
               <div className="aspect-[16/10] w-full rounded-lg overflow-hidden border border-gray-200">
                 <iframe
-                  src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&mode=MONTH"
+                  src="https://calendar.google.com/calendar/embed?src=da714330ce973b452b5f549314e7df91465c036b03091517b19ecf833ef72888%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no""
                   style={{ border: 0 }}
                   width="100%"
                   height="100%"
@@ -188,8 +188,7 @@ export function GetInvolved() {
               LinkedIn
             </Button>
             <Button
-            variant="default"
-              className="bg-[#4A154B] hover:bg-[#3F0E40]/90 text-white rounded-xl w-full sm:w-auto"
+              className="!bg-[#4A154B] hover:bg-[#3F0E40]/90 text-white rounded-xl w-full sm:w-auto"
               onClick={() => window.open('https://join.slack.com/t/ufnatsec/shared_invite/zt-3gnhxlssn-JQbxI3jCo2JZjTtX~Dpl8Q', '_blank')}
               aria-label="Slack"
             >
