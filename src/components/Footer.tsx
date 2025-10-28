@@ -1,4 +1,5 @@
 import { Linkedin, Instagram, Mail } from 'lucide-react';
+import { FaSlack } from 'react-icons/fa';
 
 export function Footer() {
   return (
@@ -28,7 +29,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-              aria-label="Discord"
+              aria-label="Slack"
             >
               <svg
                 width="20"
