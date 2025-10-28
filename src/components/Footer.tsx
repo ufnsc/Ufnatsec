@@ -15,7 +15,7 @@ export function Footer() {
           {/* Social Icons */}
           <div className="flex items-center gap-4">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/ufnatsec/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
@@ -24,7 +24,7 @@ export function Footer() {
               <Linkedin size={20} />
             </a>
             <a
-              href="https://discord.com"
+              href="https://join.slack.com/t/ufnatsec/shared_invite/zt-3gnhxlssn-JQbxI3jCo2JZjTtX~Dpl8Q"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"

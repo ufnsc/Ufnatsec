@@ -181,14 +181,14 @@ export function GetInvolved() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               className="bg-[#0021A5] hover:bg-[#0021A5]/90 text-white rounded-xl w-full sm:w-auto"
-              onClick={() => window.open('https://linkedin.com', '_blank')}
+              onClick={() => window.open('https://www.linkedin.com/company/ufnatsec/', '_blank')}
             >
               <Linkedin className="mr-2" size={18} />
               LinkedIn
             </Button>
             <Button
               className="bg-[#5865F2] hover:bg-[#5865F2]/90 text-white rounded-xl w-full sm:w-auto"
-              onClick={() => window.open('https://discord.com', '_blank')}
+              onClick={() => window.open('https://join.slack.com/t/ufnatsec/shared_invite/zt-3gnhxlssn-JQbxI3jCo2JZjTtX~Dpl8Q', '_blank')}
             >
               <svg
                 className="mr-2"

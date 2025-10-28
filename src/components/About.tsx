@@ -52,11 +52,7 @@ export function About({ onGetInvolvedClick, onContactClick }: AboutProps) {
             </div>
             
             <p className="text-xl text-gray-700 leading-relaxed text-center max-w-4xl mx-auto">
-              The University of Florida National Security Club advances multidisciplinary 
-              collaboration in national security by connecting students, faculty, government 
-              officials, and industry professionals. We foster critical thinking, research, 
-              and dialogue on the most pressing security challenges facing our nation and the 
-              world, preparing the next generation of leaders to protect and serve.
+              The FINS Student Network provides a multidisciplinary forum for students from all majors who are curious or passionate about national security. Our mission is to destigmatize conversations around defense and security, create networking opportunities, foster mentorship, and inspire innovation. Through discussions with peers and professionals, we aim to broaden understanding of critical national security challenges and prepare the next generation of leaders to tackle emerging issues at the intersection of engineering, policy, and beyond.
             </p>
           </div>
         </div>
