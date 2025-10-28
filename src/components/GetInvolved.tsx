@@ -122,7 +122,7 @@ export function GetInvolved() {
             <div className="p-6 md:p-8">
               <div className="aspect-[16/10] w-full rounded-lg overflow-hidden border border-gray-200">
                 <iframe
-                  src="https://calendar.google.com/calendar/embed?src=da714330ce973b452b5f549314e7df91465c036b03091517b19ecf833ef72888%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no""
+                  src="https://calendar.google.com/calendar/embed?src=da714330ce973b452b5f549314e7df91465c036b03091517b19ecf833ef72888%40group.calendar.google.com&ctz=America%2FNew_York"
                   style={{ border: 0 }}
                   width="100%"
                   height="100%"
