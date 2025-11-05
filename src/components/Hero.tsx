@@ -17,10 +17,10 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
       {/* Grid Pattern Overlay for Tech Feel */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0021A510_1px,transparent_1px),linear-gradient(to_bottom,#0021A510_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
       
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 relative z-10">
         <div className="text-center">
           {/* Logo Placeholder */}
-          <div className="flex flex-col items-center justify-center space-y-4">
+          <div className="flex flex-col items-center justify-center">
                 <img
                   src="/NSC_Logo.png"
                   alt="NSC Logo"
@@ -32,7 +32,7 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
           <h1 className="text-4xl md:text-6xl text-gray-900 text-center">
             National Security Club
           </h1>
-          <p className="text-xl md:text-3xl mb-12 md:mb-16 text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl md:text-3xl mb-6 md:mb-10 text-gray-600 max-w-3xl mx-auto">
             Building Tomorrow's National Security Leaders
           </p>
 
