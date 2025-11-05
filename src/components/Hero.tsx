@@ -24,15 +24,15 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
                 <img
                   src="/NSC_Logo.png"
                   alt="NSC Logo"
-                  className="w-[24px] h-[24px] md:w-[32px] md:h-[32px]"
+                  className="w-[24px] h-[24px] md:w-[32px] md:h-[32px] mb-4 m-0"
                 />
             </div>
 
           {/* Tagline */}
-          <h1 className="text-4xl md:text-6xl text-gray-900 text-center">
+          <h1 className="text-4xl md:text-6xl text-gray-900 text-center mb-2 m-0">
             National Security Club
           </h1>
-          <p className="text-xl md:text-3xl mb-6 md:mb-10 text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl md:text-3xl mb-6 md:mb-10 text-gray-600 max-w-3xl mx-auto m-0">
             Building Tomorrow's National Security Leaders
           </p>
 
