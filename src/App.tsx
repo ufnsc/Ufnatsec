@@ -48,7 +48,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
-      <div className="pt-16">
+      <div className="pt-8">
         {renderContent()}
       </div>
       <Footer />
