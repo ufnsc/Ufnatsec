@@ -22,8 +22,8 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
           {/* Logo Placeholder */}
           <div className="flex flex-col items-center justify-center space-y-4">
                 <img
-                  src="/NSCLogo.png"
-                  alt="NESC Logo"
+                  src="/NSC_Logo.png"
+                  alt="NSC Logo"
                   className="w-[24px] h-[24px] md:w-[32px] md:h-[32px]"
                 />
             </div>

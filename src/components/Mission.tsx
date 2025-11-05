@@ -15,7 +15,7 @@ export function Mission({ onLearnMoreClick }: MissionProps) {
         <div className="bg-white rounded-2xl shadow-lg p-8 md:p-10 text-center">
           
           <p className="text-lg text-gray-700 leading-relaxed mb-8 max-w-4xl mx-auto">
-            UF NatSec aims to cultivate a multidisciplinary community of students interested in national security by
+            NSC aims to cultivate a multidisciplinary community of students interested in national security by
             providing access to professionals and opportunities that develop their skills and empower them to
             become emerging leaders.
           </p>
