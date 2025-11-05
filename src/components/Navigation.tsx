@@ -29,7 +29,7 @@ export function Navigation({ activeTab, onTabChange }: NavigationProps) {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="text-[#0021A5]">UF NatSec</span>
+            <span className="text-[#0021A5]">UF NSC</span>
           </div>
 
           {/* Desktop Navigation */}
