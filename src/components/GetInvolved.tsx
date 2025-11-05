@@ -128,7 +128,7 @@ export function GetInvolved() {
                   height="100%"
                   frameBorder="0"
                   scrolling="no"
-                  title="UF NatSec Events Calendar"
+                  title="NSC Events Calendar"
                 ></iframe>
               </div>
               <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
@@ -182,14 +182,14 @@ export function GetInvolved() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               className="bg-[#0021A5] hover:bg-[#0021A5]/90 text-white rounded-xl w-full sm:w-auto"
-              onClick={() => window.open('https://www.linkedin.com/company/ufnatsec/', '_blank')}
+              onClick={() => window.open('https://www.linkedin.com/company/ufnsc/', '_blank')}
             >
               <Linkedin className="mr-2" size={18} />
               LinkedIn
             </Button>
             <Button
               className="!bg-[#4A154B] hover:bg-[#3F0E40] text-white rounded-xl w-full sm:w-auto"
-              onClick={() => window.open('https://join.slack.com/t/ufnatsec/shared_invite/zt-3gnhxlssn-JQbxI3jCo2JZjTtX~Dpl8Q', '_blank')}
+              onClick={() => window.open('https://join.slack.com/t/ufnsc/shared_invite/zt-3gnhxlssn-JQbxI3jCo2JZjTtX~Dpl8Q', '_blank')}
               aria-label="Slack"
             >
               <FaSlack size={18} className="mr-2" />
@@ -197,7 +197,7 @@ export function GetInvolved() {
             </Button>
             <Button
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-xl w-full sm:w-auto"
-              onClick={() => window.open('https://instagram.com', '_blank')}
+              onClick={() => window.open('https://www.instagram.com/uf.nsc/', '_blank')}
             >
               <Instagram className="mr-2" size={18} />
               Instagram

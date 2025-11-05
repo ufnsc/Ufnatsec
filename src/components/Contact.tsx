@@ -41,12 +41,12 @@ export function Contact() {
                 <div>
                   <p className="text-gray-900 mb-1">LinkedIn</p>
                   <a
-                    href="https://linkedin.com/company/ufnatsec"
+                    href="https://linkedin.com/company/ufnsc"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#0021A5] hover:underline"
                   >
-                    linkedin.com/company/ufnatsec
+                    linkedin.com/company/ufnsc
                   </a>
                 </div>
               </div>

@@ -15,7 +15,7 @@ export function Sponsor() {
               <h2 className="text-white mb-6">Sponsor Us</h2>
               
               <p className="text-white/90 text-base md:text-lg mb-8 leading-relaxed">
-                Your support enables UF NatSec to educate, inspire, and connect students with national security professionals and opportunities. By partnering with us, you help develop the next generation of national security leaders while showcasing your organization's expertise and commitment to the field.
+                Your support enables NSC to educate, inspire, and connect students with national security professionals and opportunities. By partnering with us, you help develop the next generation of national security leaders while showcasing your organization's expertise and commitment to the field.
               </p>
 
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 mb-8 border border-white/20">
@@ -42,7 +42,7 @@ export function Sponsor() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/NatSecSponsorshipPacket.pdf" download>
+                <a href="/NSCSponsorshipPacket.pdf" download>
                   <Button className="bg-white text-[#0021A5] hover:bg-white/90 rounded-xl px-8 py-6 shadow-lg">
                     <Download className="mr-2" size={18} />
                     Download Prospectus
@@ -58,7 +58,7 @@ export function Sponsor() {
               </div>
 
               <p className="text-white/70 text-xs md:text-sm mt-6">
-                All donations go directly to supporting UF NatSec.
+                All donations go directly to supporting UF NSC.
               </p>
             </div>
           </div>

@@ -22,15 +22,15 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
           {/* Logo Placeholder */}
           <div className="flex flex-col items-center justify-center space-y-4">
                 <img
-                  src="/NatSecLogo.png"
-                  alt="UF NatSec Logo"
+                  src="/NSCLogo.png"
+                  alt="NESC Logo"
                   className="w-[24px] h-[24px] md:w-[32px] md:h-[32px]"
                 />
             </div>
 
           {/* Tagline */}
           <h1 className="text-4xl md:text-6xl text-gray-900 text-center">
-            UF NatSec
+            National Security Club
           </h1>
           <p className="text-xl md:text-3xl mb-12 md:mb-16 text-gray-600 max-w-3xl mx-auto">
             Building Tomorrow's National Security Leaders
