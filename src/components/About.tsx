@@ -52,7 +52,7 @@ export function About({ onGetInvolvedClick, onContactClick }: AboutProps) {
             </div>
             
             <p className="text-xl text-gray-700 leading-relaxed text-center max-w-4xl mx-auto">
-              UF NatSec provides a multidisciplinary forum for students from all majors who are curious or passionate about national security. Our mission is to destigmatize conversations around defense and security, create networking opportunities, foster mentorship, and inspire innovation. Through discussions with peers and professionals, we aim to broaden understanding of critical national security challenges and prepare the next generation of leaders to tackle emerging issues at the intersection of engineering, policy, and beyond.
+              NSC provides a multidisciplinary forum for students from all majors who are curious or passionate about national security. Our mission is to destigmatize conversations around defense and security, create networking opportunities, foster mentorship, and inspire innovation. Through discussions with peers and professionals, we aim to broaden understanding of critical national security challenges and prepare the next generation of leaders to tackle emerging issues at the intersection of engineering, policy, and beyond.
             </p>
           </div>
         </div>
@@ -189,7 +189,7 @@ export function About({ onGetInvolvedClick, onContactClick }: AboutProps) {
             <div className="text-center text-white">
               <h2 className="text-white mb-6">Ready to Make an Impact?</h2>
               <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Join UF NatSec and become part of a community dedicated to shaping the future of national security.
+                Join UF NSC and become part of a community dedicated to shaping the future of national security.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button

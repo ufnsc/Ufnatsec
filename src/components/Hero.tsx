@@ -6,7 +6,7 @@ interface HeroProps {
 
 export function Hero({ onGetInvolvedClick }: HeroProps) {
   return (
-    <section id="home" className="bg-white relative overflow-hidden">
+    <section id="home" className="bg-white relative overflow-hidden min-h-screen flex flex-col items-center justify-center -mt-16">
       {/* Subtle Tech-Inspired Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#0021A5] rounded-full blur-3xl"></div>
