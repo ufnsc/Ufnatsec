@@ -9,17 +9,28 @@ import img7 from '../../images/IMG_9613.JPG';
 const images = [img1, img2, img3, img4, img5, img6, img7];
 const doubled = [...images, ...images];
 
+const maskImage = [
+  'linear-gradient(to right,',
+  '  transparent 0%,',
+  '  rgba(0,0,0,0.2) 5%,',
+  '  rgba(0,0,0,0.6) 12%,',
+  '  black 22%,',
+  '  black 78%,',
+  '  rgba(0,0,0,0.6) 88%,',
+  '  rgba(0,0,0,0.2) 95%,',
+  '  transparent 100%',
+  ')',
+].join('');
+
 export function ImageCarousel() {
   return (
-    <section className="bg-[#050d1a] py-12 md:py-16 relative overflow-hidden">
-      <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-28 md:w-48"
-        style={{ background: 'linear-gradient(to right, #050d1a 0%, transparent 100%)' }}
-      />
-      <div
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-28 md:w-48"
-        style={{ background: 'linear-gradient(to left, #050d1a 0%, transparent 100%)' }}
-      />
+    <section
+      className="bg-[#050d1a] py-12 md:py-16 relative overflow-hidden"
+      style={{
+        WebkitMaskImage: maskImage,
+        maskImage,
+      }}
+    >
       <div className="carousel-track">
         {doubled.map((src, i) => (
           <div key={i} className="carousel-item">
