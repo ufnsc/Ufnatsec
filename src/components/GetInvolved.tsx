@@ -4,29 +4,11 @@ import { Input } from './ui/input';
 import { Calendar, Linkedin, Instagram, Mail } from 'lucide-react';
 import { FaSlack } from 'react-icons/fa';
 import { useState } from 'react';
+import cyberEarthImg from '../../images/cyberearth.jpg';
 
 export function GetInvolved() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
-
-  /*
-  const upcomingEvents = [
-    {
-      title: 'Cybersecurity Workshop',
-      date: 'November 15, 2025',
-      description: 'Hands-on workshop covering modern cybersecurity threats and defense strategies.',
-    },
-    {
-      title: 'National Security Speaker Series',
-      date: 'December 3, 2025',
-      description: 'Guest speakers from government and industry discuss current security challenges.',
-    },
-    {
-      title: 'Intelligence Analysis Forum',
-      date: 'January 20, 2026',
-      description: 'Interactive session on intelligence gathering and analytical methodologies.',
-    },
-  ]; */
 
   const recurringEvents = [
     {
@@ -73,57 +55,72 @@ export function GetInvolved() {
   };
 
   return (
-    <section id="get-involved" className="bg-[#f0f4ff] py-12 md:py-20">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Page Header Banner */}
-        <div className="bg-gradient-to-r from-[#0021A5] to-[#0021A5]/90 rounded-2xl shadow-lg p-8 md:p-10 mb-12 text-center">
-          <h2 className="text-white mb-4">Get Involved</h2>
-          <p className="text-white/90 max-w-2xl mx-auto text-lg">
+    <section id="get-involved" className="relative py-12 md:py-20 overflow-hidden" style={{ backgroundColor: '#050d1a' }}>
+
+      {/* Blurred background image */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${cyberEarthImg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'blur(10px)',
+          transform: 'scale(1.08)',
+          opacity: 0.18,
+        }}
+      />
+
+      {/* Radial gradient — solid centre, soft feathered edge into image */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `radial-gradient(ellipse 72% 68% at center,
+            #050d1a 0%,
+            #050d1a 36%,
+            rgba(5,13,26,0.97) 48%,
+            rgba(5,13,26,0.80) 60%,
+            rgba(5,13,26,0.45) 74%,
+            rgba(5,13,26,0.12) 88%,
+            transparent 100%)`,
+        }}
+      />
+
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-12">
+          <div className="flex flex-col items-center">
+            <h2 className="font-mono text-white text-center text-3xl md:text-5xl font-bold tracking-[0.12em] uppercase">
+              GET INVOLVED
+            </h2>
+            <div
+              className="mt-10 rounded-full"
+              style={{
+                width: '28rem',
+                maxWidth: '72vw',
+                height: '3px',
+                backgroundColor: '#FA4616',
+                boxShadow: '0 0 12px rgba(250, 70, 22, 0.3)',
+              }}
+            />
+          </div>
+          <p className="text-[#94a3b8] max-w-2xl mx-auto text-center text-lg mt-8">
             Join our community of students and professionals interested in national
             security. Attend events, connect with peers, and build your expertise.
           </p>
         </div>
 
-        {/* Upcoming Events 
-        <div className="mb-12 md:mb-16">
-          <div className="bg-gradient-to-r from-[#0021A5]/10 to-[#FA4616]/10 rounded-xl p-4 mb-6">
-            <h3 className="text-gray-900 text-center md:text-left">
-              Upcoming Events
-            </h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {upcomingEvents.map((event, index) => (
-              <Card key={index} className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border-0">
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="p-2 rounded-lg bg-[#0021A5]/10">
-                    <Calendar className="text-[#0021A5]" size={20} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-gray-900 mb-1">{event.title}</h4>
-                    <p className="text-sm text-[#FA4616]">{event.date}</p>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {event.description}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </div> */}
-
         {/* Calendar Integration */}
         <div className="mb-12 md:mb-16">
-          <div className="bg-gradient-to-r from-[#0021A5]/10 to-[#FA4616]/10 rounded-xl p-4 mb-6">
-            <h3 className="text-gray-900 text-center md:text-left">
+          <div className="bg-[#0d1f3c] border border-[#1e3a5f] rounded-xl p-4 mb-6">
+            <h3 className="font-mono text-white text-center md:text-left">
               Event Calendar
             </h3>
           </div>
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+          <div className="bg-[#0a1628] border border-[#1e3a5f] rounded-2xl shadow-lg overflow-hidden">
             <div className="p-6 md:p-8">
-              <div className="aspect-[16/10] w-full rounded-lg overflow-hidden border border-gray-200">
+              <div className="aspect-[16/10] w-full rounded-lg overflow-hidden border border-[#1e3a5f]">
                 <iframe
                   src="https://calendar.google.com/calendar/embed?src=da714330ce973b452b5f549314e7df91465c036b03091517b19ecf833ef72888%40group.calendar.google.com&ctz=America%2FNew_York"
-                  style={{ border: 0 }}
+                  style={{ border: 0, filter: 'invert(1) hue-rotate(180deg)' }}
                   width="100%"
                   height="100%"
                   frameBorder="0"
@@ -133,7 +130,7 @@ export function GetInvolved() {
               </div>
               <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
                 <Button
-                  className="bg-[#0021A5] hover:bg-[#0021A5]/90 text-white rounded-xl"
+                  className="bg-[#3b82f6] hover:bg-[#2563eb] text-white rounded-xl"
                   onClick={() => window.open('https://calendar.google.com', '_blank')}
                 >
                   <Calendar className="mr-2" size={18} />
@@ -141,7 +138,7 @@ export function GetInvolved() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-[#0021A5] text-[#0021A5] hover:bg-[#0021A5]/10 rounded-xl"
+                  className="border-[#1e3a5f] text-[#3b82f6] hover:bg-[#3b82f6]/10 rounded-xl"
                   onClick={() => window.open('https://outlook.office.com/calendar', '_blank')}
                 >
                   <Calendar className="mr-2" size={18} />
@@ -154,21 +151,21 @@ export function GetInvolved() {
 
         {/* Recurring Events */}
         <div className="mb-12 md:mb-16">
-          <div className="bg-gradient-to-r from-[#0021A5]/10 to-[#FA4616]/10 rounded-xl p-4 mb-6">
-            <h3 className="text-gray-900 text-center md:text-left">
+          <div className="bg-[#0d1f3c] border border-[#1e3a5f] rounded-xl p-4 mb-6">
+            <h3 className="font-mono text-white text-center md:text-left">
               Recurring Events
             </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {recurringEvents.map((event, index) => (
-              <Card key={index} className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border-0">
+              <Card key={index} className="p-6 bg-[#0a1628] border border-[#1e3a5f] rounded-xl hover:shadow-lg hover:shadow-[#3b82f6]/5 transition-shadow">
                 <div className="mb-3">
-                  <h4 className="text-gray-900 mb-2">{event.title}</h4>
-                  <div className="inline-block px-3 py-1 bg-[#FA4616]/10 text-[#FA4616] rounded-lg text-sm">
+                  <h4 className="font-mono text-white mb-2">{event.title}</h4>
+                  <div className="inline-block px-3 py-1 bg-[#3b82f6]/10 border border-[#1e3a5f] text-[#3b82f6] rounded-lg text-sm">
                     {event.frequency}
                   </div>
                 </div>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-[#94a3b8] leading-relaxed">
                   {event.description}
                 </p>
               </Card>
@@ -177,11 +174,11 @@ export function GetInvolved() {
         </div>
 
         {/* Connect with Us */}
-        <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-8">
-          <h3 className="text-gray-900 mb-6 text-center">Connect With Us</h3>
+        <div className="bg-[#0a1628] border border-[#1e3a5f] rounded-2xl shadow-lg p-6 md:p-8 mb-8">
+          <h3 className="font-mono text-white mb-6 text-center">Connect With Us</h3>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
-              className="bg-[#0021A5] hover:bg-[#0021A5]/90 text-white rounded-xl w-full sm:w-auto"
+              className="bg-[#3b82f6] hover:bg-[#2563eb] text-white rounded-xl w-full sm:w-auto"
               onClick={() => window.open('https://www.linkedin.com/company/ufnsc/', '_blank')}
             >
               <Linkedin className="mr-2" size={18} />
@@ -204,39 +201,6 @@ export function GetInvolved() {
             </Button>
           </div>
         </div>
-
-        {/* Email Signup 
-        <div className="bg-gradient-to-r from-[#0021A5] to-[#0021A5]/90 rounded-2xl shadow-lg p-6 md:p-8">
-          <div className="max-w-xl mx-auto text-center">
-            <Mail className="mx-auto mb-4 text-white" size={32} />
-            <h3 className="text-white mb-3">Stay Updated</h3>
-            <p className="text-white/90 mb-6 text-sm md:text-base">
-              Subscribe to our newsletter for event updates and security insights.
-            </p>
-            {!submitted ? (
-              <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="flex-1 bg-white border-0 rounded-xl"
-                />
-                <Button
-                  type="submit"
-                  className="bg-[#FA4616] hover:bg-[#FA4616]/90 text-white rounded-xl"
-                >
-                  Subscribe
-                </Button>
-              </form>
-            ) : (
-              <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-white">
-                ✓ Thank you for subscribing!
-              </div>
-            )}
-          </div>
-        </div> */}
 
       </div>
     </section>

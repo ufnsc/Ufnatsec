@@ -1,47 +1,60 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-interface NavigationProps {
-  activeTab: string;
-  onTabChange: (tab: string) => void;
-}
+const NAV_ITEMS = [
+  { label: 'Home', id: 'home' },
+  { label: 'About', id: 'about' },
+  { label: 'Get Involved', id: 'get-involved' },
+  { label: 'Team', id: 'team' },
+  { label: 'Sponsor Us', id: 'sponsor' },
+  { label: 'Contact', id: 'contact' },
+];
 
-export function Navigation({ activeTab, onTabChange }: NavigationProps) {
+export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
-  const navItems = [
-    { label: 'Home', value: 'home' },
-    { label: 'About', value: 'about' },
-    { label: 'Get Involved', value: 'get-involved' },
-    { label: 'Team', value: 'team' },
-    { label: 'Sponsor Us', value: 'sponsor' },
-    { label: 'Contact', value: 'contact' },
-  ];
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollY = window.scrollY + window.innerHeight * 0.25;
+      let current = 'home';
+      for (const { id } of NAV_ITEMS) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollY) current = id;
+      }
+      setActiveSection(current);
+    };
 
-  const handleTabClick = (value: string) => {
-    onTabChange(value);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setMobileMenuOpen(false);
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#07111f]/68 backdrop-blur-sm border-b border-[#FA4616]/12 shadow-md shadow-black/10">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <span className="text-[#0021A5]">UF NSC</span>
-          </div>
+          <button onClick={() => scrollTo('home')} className="flex items-center gap-3">
+            <img src="/NSC_Logo.png" alt="NSC Logo" className="h-10 w-10 object-contain" />
+            <span className="text-[#ff9b78] font-mono font-bold text-base md:text-lg tracking-[0.12em] uppercase">
+              National Security Club
+            </span>
+          </button>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <button
-                key={item.value}
-                onClick={() => handleTabClick(item.value)}
-                className={`transition-colors ${
-                  activeTab === item.value
-                    ? 'text-[#0021A5]'
-                    : 'text-gray-700 hover:text-[#0021A5]'
+                key={item.id}
+                onClick={() => scrollTo(item.id)}
+                className={`nav-link transition-colors font-mono text-sm tracking-[0.08em] uppercase ${
+                  activeSection === item.id
+                    ? 'nav-link-active text-[#ffd9cc]'
+                    : 'text-[#ff9b78] hover:text-[#ffd9cc]'
                 }`}
               >
                 {item.label}
@@ -49,11 +62,10 @@ export function Navigation({ activeTab, onTabChange }: NavigationProps) {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 hover:text-[#0021A5]"
+              className="text-[#ff9b78] hover:text-[#ffd9cc]"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -61,18 +73,17 @@ export function Navigation({ activeTab, onTabChange }: NavigationProps) {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
+        <div className="md:hidden bg-[#07111f]/94 border-t border-[#FA4616]/12">
           <div className="px-4 pt-2 pb-4 space-y-2">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <button
-                key={item.value}
-                onClick={() => handleTabClick(item.value)}
-                className={`block w-full text-left px-3 py-2 rounded-lg transition-colors ${
-                  activeTab === item.value
-                    ? 'bg-[#0021A5]/10 text-[#0021A5]'
-                    : 'text-gray-700 hover:bg-[#0021A5]/10 hover:text-[#0021A5]'
+                key={item.id}
+                onClick={() => scrollTo(item.id)}
+                className={`block w-full text-left px-3 py-2 rounded-lg transition-colors font-mono text-sm tracking-[0.08em] uppercase ${
+                  activeSection === item.id
+                    ? 'bg-[#FA4616]/8 text-[#ffd9cc]'
+                    : 'text-[#ff9b78] hover:bg-[#FA4616]/8 hover:text-[#ffd9cc]'
                 }`}
               >
                 {item.label}
