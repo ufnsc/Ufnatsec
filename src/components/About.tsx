@@ -1,6 +1,4 @@
-import { Button } from './ui/button';
 import { Shield, Users, Lightbulb, Heart } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 
 interface AboutProps {
   onGetInvolvedClick: () => void;
@@ -34,24 +32,21 @@ export function About({ onGetInvolvedClick, onContactClick }: AboutProps) {
   return (
     <>
       {/* Header & Mission Statement */}
-      <section className="bg-[#050d1a] py-12 md:py-20">
+      <section style={{ backgroundColor: 'var(--tac-navy)' }} className="py-12 md:py-20">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Page Header Banner */}
-          <div className="bg-gradient-to-r from-[#050d1a] to-[#0d1f3c] border border-[#1e3a5f] rounded-2xl shadow-lg p-8 md:p-10 mb-12 text-center">
-            <h2 className="font-mono text-white mb-4">About Us</h2>
-            <p className="text-[#94a3b8] max-w-2xl mx-auto text-lg">
+          <div className="mb-12">
+            <div className="tac-eyebrow mb-4">
+              <span className="tac-bracket">[</span> ABOUT <span className="tac-bracket">]</span>
+            </div>
+            <div className="tac-divider mb-6" />
+            <p className="tac-sans" style={{ color: 'var(--tac-text-dim)', fontSize: '1.1rem', maxWidth: '40rem' }}>
               Building the future of national security through education, collaboration, and innovation.
             </p>
           </div>
 
-          <div className="bg-[#0a1628] rounded-2xl p-8 md:p-10 shadow-lg border border-[#1e3a5f]">
-            <div className="text-center mb-6">
-              <div className="inline-block px-4 py-2 bg-[#3b82f6]/10 border border-[#1e3a5f] rounded-full mb-4">
-                <span className="text-[#3b82f6] font-mono text-sm">Our Mission</span>
-              </div>
-            </div>
-
-            <p className="text-xl text-[#e0eaff] leading-relaxed text-center max-w-4xl mx-auto">
+          <div className="tac-card" style={{ padding: '2.5rem' }}>
+            <div className="tac-tag mb-6">Our Mission</div>
+            <p className="tac-sans" style={{ color: 'var(--tac-text)', fontSize: '1.15rem', lineHeight: 1.75, maxWidth: '52rem' }}>
               NSC provides a multidisciplinary forum for students from all majors who are curious or passionate about national security. Our mission is to destigmatize conversations around defense and security, create networking opportunities, foster mentorship, and inspire innovation. Through discussions with peers and professionals, we aim to broaden understanding of critical national security challenges and prepare the next generation of leaders to tackle emerging issues at the intersection of engineering, policy, and beyond.
             </p>
           </div>
@@ -59,28 +54,25 @@ export function About({ onGetInvolvedClick, onContactClick }: AboutProps) {
       </section>
 
       {/* Our Values */}
-      <section className="bg-[#050d1a] py-12 md:py-20">
+      <section style={{ backgroundColor: 'var(--tac-navy-alt)' }} className="py-12 md:py-20">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#0d1f3c] border border-[#1e3a5f] rounded-xl p-4 mb-8">
-            <h2 className="font-mono text-white text-center">Our Values</h2>
+          <div className="mb-12">
+            <div className="tac-eyebrow mb-4">
+              <span className="tac-bracket">[</span> VALUES <span className="tac-bracket">]</span>
+            </div>
+            <div className="tac-divider" />
           </div>
-          <p className="text-[#64748b] max-w-2xl mx-auto text-center mb-12">
-            The principles that guide everything we do and shape our community.
-          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
-                <div
-                  key={index}
-                  className="bg-[#0a1628] border border-[#1e3a5f] rounded-2xl p-6 md:p-8 text-center hover:shadow-lg hover:shadow-[#3b82f6]/5 transition-shadow"
-                >
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#3b82f6]/10 flex items-center justify-center">
-                    <Icon className="text-[#3b82f6]" size={28} />
+                <div key={index} className="tac-card" style={{ padding: '2rem', textAlign: 'center' }}>
+                  <div className="tac-icon-box" style={{ margin: '0 auto 1.25rem' }}>
+                    <Icon style={{ color: 'var(--tac-accent)' }} size={24} />
                   </div>
-                  <h3 className="font-mono text-white mb-3">{value.title}</h3>
-                  <p className="text-sm text-[#94a3b8] leading-relaxed">
+                  <h3 className="font-mono" style={{ color: 'var(--tac-text)', marginBottom: '0.75rem' }}>{value.title}</h3>
+                  <p className="tac-sans text-sm" style={{ color: 'var(--tac-text-dim)', lineHeight: 1.6 }}>
                     {value.description}
                   </p>
                 </div>
@@ -91,28 +83,20 @@ export function About({ onGetInvolvedClick, onContactClick }: AboutProps) {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-[#050d1a] py-12 md:py-16">
+      <section style={{ backgroundColor: 'var(--tac-navy)' }} className="py-12 md:py-16">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-[#050d1a] to-[#0d1f3c] border border-[#1e3a5f] rounded-2xl shadow-lg p-8 md:p-12">
-            <div className="text-center">
-              <h2 className="font-mono text-white mb-6">Ready to Make an Impact?</h2>
-              <p className="text-xl text-[#94a3b8] mb-8 max-w-2xl mx-auto">
-                Join UF NSC and become part of a community dedicated to shaping the future of national security.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  onClick={onGetInvolvedClick}
-                  className="bg-[#FA4616] hover:bg-[#FA4616]/90 text-white px-8 py-6 rounded-xl shadow-lg transition-all hover:shadow-xl"
-                >
-                  Get Involved
-                </Button>
-                <Button
-                  onClick={onContactClick}
-                  className="bg-[#3b82f6]/10 hover:bg-[#3b82f6]/20 text-[#3b82f6] border border-[#3b82f6]/30 px-8 py-6 rounded-xl shadow-lg transition-all hover:shadow-xl"
-                >
-                  Contact Us
-                </Button>
-              </div>
+          <div className="tac-card" style={{ padding: '3rem', textAlign: 'center' }}>
+            <h2 className="font-mono" style={{ color: 'var(--tac-text)', marginBottom: '1rem' }}>Ready to Make an Impact?</h2>
+            <p className="tac-sans" style={{ color: 'var(--tac-text-dim)', fontSize: '1.1rem', marginBottom: '2rem', maxWidth: '36rem', marginLeft: 'auto', marginRight: 'auto' }}>
+              Join UF NSC and become part of a community dedicated to shaping the future of national security.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button onClick={onGetInvolvedClick} className="tac-btn tac-btn-primary">
+                Get Involved
+              </button>
+              <button onClick={onContactClick} className="tac-btn tac-btn-outline">
+                Contact Us
+              </button>
             </div>
           </div>
         </div>

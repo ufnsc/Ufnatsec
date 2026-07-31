@@ -1,0 +1,317 @@
+/*
+  Defense-tech / HUD visual system (Anduril-Palantir style).
+  Hand-written utility classes — this project's index.css is a static
+  Tailwind snapshot (no live build step), so new utilities are added here
+  instead of as Tailwind classes, following the same pattern already used
+  at the bottom of index.css.
+*/
+
+:root {
+  --tac-black: #030509;
+  --tac-navy: #050d1a;
+  --tac-navy-alt: #0a1220;
+  --tac-navy-raised: #0d1522;
+  --tac-line: rgba(255, 255, 255, 0.14);
+  --tac-line-soft: rgba(255, 255, 255, 0.07);
+  --tac-line-strong: rgba(255, 255, 255, 0.28);
+  --tac-text: #eef2f6;
+  --tac-text-dim: #8b96a5;
+  --tac-text-faint: #5a6472;
+  --tac-accent: #fa4616;
+  --tac-accent-dim: rgba(250, 70, 22, 0.14);
+  --tac-font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --tac-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/*
+  Base texture: grid overlay, applied site-wide.
+  Every section paints its own opaque background color, so a texture on
+  <body> would be completely hidden. Instead this is a fixed, full-viewport
+  layer painted above all page content at very low opacity — visually reads
+  as "behind" the content since it's faint enough not to interfere with
+  text, while guaranteeing visibility over every section regardless of
+  local stacking contexts.
+*/
+
+.tac-grid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* ===== Typography ===== */
+
+.tac-sans {
+  font-family: var(--tac-font-sans);
+}
+
+.tac-mono {
+  font-family: var(--tac-font-mono);
+}
+
+.tac-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--tac-font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--tac-text-dim);
+}
+
+.tac-bracket {
+  color: var(--tac-accent);
+  font-weight: 600;
+}
+
+/* ===== Dividers ===== */
+
+.tac-divider {
+  height: 1px;
+  width: 100%;
+  background: var(--tac-line);
+  border: 0;
+}
+
+.tac-divider-soft {
+  height: 1px;
+  width: 100%;
+  background: var(--tac-line-soft);
+  border: 0;
+}
+
+/* ===== Cards / "briefing document" surfaces ===== */
+
+.tac-card {
+  background: var(--tac-navy-alt);
+  border: 1px solid var(--tac-line);
+  border-radius: 0;
+  box-shadow: none;
+  transition: border-color 200ms ease;
+}
+
+.tac-card:hover {
+  border-color: rgba(250, 70, 22, 0.45);
+}
+
+/* Corner-bracket frame, like a targeting reticle around a photo/badge */
+.tac-bracket-frame {
+  position: relative;
+}
+
+.tac-bracket-frame::before,
+.tac-bracket-frame::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tac-bracket-frame::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--tac-accent);
+  border-left: 2px solid var(--tac-accent);
+}
+
+.tac-bracket-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--tac-accent);
+  border-right: 2px solid var(--tac-accent);
+}
+
+/* ===== Buttons ===== */
+
+.tac-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  font-family: var(--tac-font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.9rem;
+  border-radius: 0;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.tac-btn-primary {
+  background: var(--tac-accent);
+  color: #0a0400;
+  border-color: var(--tac-accent);
+}
+
+.tac-btn-primary:hover {
+  background: transparent;
+  color: var(--tac-accent);
+}
+
+.tac-btn-outline {
+  background: transparent;
+  color: var(--tac-text);
+  border-color: var(--tac-line-strong);
+}
+
+.tac-btn-outline:hover {
+  border-color: var(--tac-accent);
+  color: var(--tac-accent);
+}
+
+/* ===== Watermark logo ===== */
+
+.tac-watermark {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.05;
+  filter: grayscale(1);
+  z-index: 0;
+  user-select: none;
+}
+
+/* ===== Stat / dashboard readout ===== */
+
+.tac-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .tac-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.tac-stat-tile {
+  border-left: 1px solid var(--tac-line);
+  padding: 0 1.5rem;
+}
+
+.tac-stat-value {
+  font-family: var(--tac-font-mono);
+  font-weight: 700;
+  color: var(--tac-text);
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.tac-stat-label {
+  font-family: var(--tac-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--tac-text-faint);
+  margin-top: 0.4rem;
+}
+
+/* ===== Icon box (square, replaces rounded colored circles) ===== */
+
+.tac-icon-box {
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--tac-line);
+  background: var(--tac-accent-dim);
+  flex-shrink: 0;
+}
+
+/* ===== Small mono tag (e.g. event frequency) ===== */
+
+.tac-tag {
+  display: inline-block;
+  font-family: var(--tac-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tac-accent);
+  border: 1px solid var(--tac-line);
+  padding: 0.3rem 0.65rem;
+}
+
+/* ===== Icon buttons (square, hairline border) ===== */
+
+.tac-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--tac-line);
+  color: var(--tac-text-dim);
+  background: transparent;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.tac-icon-btn:hover {
+  border-color: var(--tac-accent);
+  color: var(--tac-accent);
+}
+
+/* ===== Classification-style footer marking (stylistic only) ===== */
+
+.tac-classification {
+  font-family: var(--tac-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--tac-text-faint);
+}
+
+/* ===== Operations gallery ===== */
+
+.tac-gallery-item {
+  position: relative;
+  border: 1px solid var(--tac-line);
+  overflow: hidden;
+  background: var(--tac-black);
+  aspect-ratio: 4 / 3;
+}
+
+.tac-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.35) contrast(1.05);
+  transition: filter 300ms ease, transform 400ms ease;
+}
+
+.tac-gallery-item:hover img {
+  filter: grayscale(0) contrast(1.05);
+  transform: scale(1.04);
+}
+
+.tac-gallery-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.85rem 1rem;
+  background: linear-gradient(to top, rgba(3, 5, 9, 0.95), rgba(3, 5, 9, 0));
+  transform: translateY(100%);
+  transition: transform 250ms ease;
+}
+
+.tac-gallery-item:hover .tac-gallery-caption {
+  transform: translateY(0);
+}
+
+.tac-gallery-caption span {
+  font-family: var(--tac-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tac-text);
+}
