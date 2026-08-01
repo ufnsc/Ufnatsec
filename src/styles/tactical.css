@@ -94,11 +94,6 @@
   border: 1px solid var(--tac-line);
   border-radius: 0;
   box-shadow: none;
-  transition: border-color 200ms ease;
-}
-
-.tac-card:hover {
-  border-color: rgba(250, 70, 22, 0.45);
 }
 
 /* Corner-bracket frame, like a targeting reticle around a photo/badge */

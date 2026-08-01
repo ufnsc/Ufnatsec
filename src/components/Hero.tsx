@@ -56,12 +56,8 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
             <img
               src="/NSC_Logo.png"
               alt="National Security Club logo"
-              style={{ width: 'clamp(110px, 14vw, 170px)', height: 'clamp(110px, 14vw, 170px)', objectFit: 'contain', marginBottom: '1.75rem' }}
+              style={{ width: 'clamp(160px, 20vw, 260px)', height: 'clamp(160px, 20vw, 260px)', objectFit: 'contain', marginBottom: '1.75rem' }}
             />
-
-            <div className="tac-eyebrow mb-6">
-              <span className="tac-bracket">[</span> NATIONAL SECURITY CLUB <span className="tac-bracket">]</span>
-            </div>
 
             <h1
               className="tac-mono"

@@ -104,7 +104,12 @@ export function Team() {
                 tabIndex={hasInterests ? 0 : undefined}
                 aria-expanded={hasInterests ? isOpen : undefined}
                 className="tac-card text-center"
-                style={{ padding: '1.75rem', cursor: hasInterests ? 'pointer' : undefined }}
+                style={{
+                  padding: '1.75rem',
+                  cursor: hasInterests ? 'pointer' : undefined,
+                  borderColor: isOpen ? 'var(--tac-line-strong)' : undefined,
+                  transition: 'border-color 150ms ease',
+                }}
               >
                 <div
                   className="w-32 h-32 mx-auto mb-4 overflow-hidden"
