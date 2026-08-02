@@ -13,7 +13,7 @@ const partners = [
 
 export function Partners() {
   return (
-    <section style={{ backgroundColor: 'var(--tac-navy-alt)' }} className="py-16 md:py-24 relative z-10">
+    <section style={{ backgroundColor: 'var(--tac-navy-alt)' }} className="py-16 md:py-24 relative z-10 tac-grid-bg">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div style={{ marginBottom: '3rem' }}>
           <div className="tac-eyebrow mb-4">

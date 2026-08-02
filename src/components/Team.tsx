@@ -6,14 +6,15 @@ import larissaImg from '../../images/larissa2.jpg';
 import rishiImg from '../../images/rishi.png';
 import greciaImg from '../../images/grecia.jpeg';
 import landonImg from '../../images/landon.jpg';
+import ethanImg from '../../images/headshot tie.png';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const officers = [
   {
     name: 'Paige Anderson',
     title: 'Co-President',
-    bio: '',
-    interests: '',
+    bio: 'Graduate Student, Nuclear Engineering',
+    interests: 'Enjoys doing research in defense.',
     image: paigeImg,
   },
   {
@@ -34,7 +35,7 @@ const officers = [
     name: 'Larissa Yaksic',
     title: '',
     bio: 'Junior, Electrical Engineering',
-    interests: '',
+    interests: 'Passionate about teaching others national security awareness.',
     image: larissaImg,
   },
   {
@@ -58,6 +59,13 @@ const officers = [
     interests: 'Passionate about public speaking and enjoys giving presentations.',
     image: landonImg,
   },
+  {
+    name: 'Ethan Ahmed',
+    title: '',
+    bio: 'Junior, Computer Science',
+    interests: 'Enjoys coding and is interested in national security work.',
+    image: ethanImg,
+  },
 ];
 
 export function Team() {
@@ -69,7 +77,7 @@ export function Team() {
   };
 
   return (
-    <section style={{ backgroundColor: 'var(--tac-navy-alt)' }} className="py-12 md:py-20">
+    <section style={{ backgroundColor: 'var(--tac-navy-alt)' }} className="py-12 md:py-20 tac-grid-bg">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <div className="tac-eyebrow mb-4">
@@ -113,7 +121,7 @@ export function Team() {
               >
                 <div
                   className="w-32 h-32 mx-auto mb-4 overflow-hidden"
-                  style={{ border: '1px solid var(--tac-line)', backgroundColor: 'var(--tac-black)' }}
+                  style={{ border: '1px solid var(--tac-line)', backgroundColor: 'var(--tac-black)', borderRadius: '50%' }}
                 >
                   <ImageWithFallback
                     src={officer.image}

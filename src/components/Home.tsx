@@ -1,6 +1,6 @@
 import { Hero } from './Hero';
 import { Mission } from './Mission';
-import { OperationsGallery } from './OperationsGallery';
+import { Events } from './Events';
 import { Partners } from './Partners';
 
 interface HomeProps {
@@ -13,7 +13,7 @@ export function Home({ onGetInvolvedClick, onAboutClick }: HomeProps) {
     <>
       <Hero onGetInvolvedClick={onGetInvolvedClick} />
       <Mission onLearnMoreClick={onAboutClick} />
-      <OperationsGallery />
+      <Events />
       <Partners />
     </>
   );

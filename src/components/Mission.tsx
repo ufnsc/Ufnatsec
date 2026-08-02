@@ -5,7 +5,7 @@ interface MissionProps {
 export function Mission({ onLearnMoreClick }: MissionProps) {
   return (
     <section
-      className="relative overflow-hidden"
+      className="relative overflow-hidden tac-grid-bg"
       style={{ backgroundColor: 'var(--tac-navy)', paddingTop: '5rem', paddingBottom: '7rem' }}
     >
       {/* Oversized ghosted logo watermark */}

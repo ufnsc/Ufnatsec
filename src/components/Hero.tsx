@@ -1,4 +1,4 @@
-import groupPhoto from '../../images/IMG_9613.JPG';
+import groupPhoto from '../../images/IMG_5434.JPG';
 
 interface HeroProps {
   onGetInvolvedClick?: () => void;
@@ -15,9 +15,9 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
       <div className="absolute inset-0">
         <img
           src={groupPhoto}
-          alt="UF National Security Club members at a general meeting"
+          alt="UF National Security Club panel discussion"
           className="w-full h-full object-cover"
-          style={{ objectPosition: 'center 35%', filter: 'grayscale(0.45) contrast(1.05) brightness(0.85)' }}
+          style={{ objectPosition: 'center 40%', filter: 'grayscale(0.45) contrast(1.05) brightness(0.85)' }}
         />
       </div>
 
@@ -34,6 +34,9 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
           background: 'linear-gradient(90deg, rgba(3,5,9,0.6) 0%, rgba(3,5,9,0.1) 30%, rgba(3,5,9,0.1) 70%, rgba(3,5,9,0.6) 100%)',
         }}
       />
+
+      {/* Subtle grid texture over the photo */}
+      <div className="absolute inset-0 tac-grid-bg" style={{ pointerEvents: 'none' }} />
 
       {/* Small precise logo badge, pinned top-left of the hero frame */}
       <div
@@ -56,7 +59,7 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
             <img
               src="/NSC_Logo.png"
               alt="National Security Club logo"
-              style={{ width: 'clamp(160px, 20vw, 260px)', height: 'clamp(160px, 20vw, 260px)', objectFit: 'contain', marginBottom: '1.75rem' }}
+              style={{ width: 'clamp(220px, 26vw, 340px)', height: 'clamp(220px, 26vw, 340px)', objectFit: 'contain', marginBottom: '1.75rem' }}
             />
 
             <h1
@@ -87,8 +90,8 @@ export function Hero({ onGetInvolvedClick }: HeroProps) {
                 marginBottom: '2.5rem',
               }}
             >
-              A multidisciplinary forum at the University of Florida for students
-              engineering, policy, and intelligence &mdash; and everything in between.
+              A multidisciplinary club at the University of Florida for students in
+              engineering, policy, intelligence, and everything in between.
             </p>
 
             {onGetInvolvedClick && (

@@ -3,7 +3,7 @@ import { FaSlack } from 'react-icons/fa';
 
 export function Footer() {
   return (
-    <footer style={{ backgroundColor: 'var(--tac-black)', borderTop: '1px solid var(--tac-line)' }}>
+    <footer className="tac-grid-bg" style={{ backgroundColor: 'var(--tac-black)', borderTop: '1px solid var(--tac-line)' }}>
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8" style={{ paddingTop: '2.5rem', paddingBottom: '2.5rem' }}>
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Tagline */}

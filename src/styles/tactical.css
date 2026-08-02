@@ -23,25 +23,97 @@
   --tac-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/*
-  Base texture: grid overlay, applied site-wide.
-  Every section paints its own opaque background color, so a texture on
-  <body> would be completely hidden. Instead this is a fixed, full-viewport
-  layer painted above all page content at very low opacity — visually reads
-  as "behind" the content since it's faint enough not to interfere with
-  text, while guaranteeing visibility over every section regardless of
-  local stacking contexts.
-*/
 
-.tac-grid-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 40;
-  pointer-events: none;
+/*
+  Subtle grid texture, applied per-section as a real CSS background-image
+  (not a global overlay). This paints behind each section's own content in
+  normal stacking order, so cards with an opaque background naturally cover
+  it in their own footprint instead of it bleeding through on top of them.
+*/
+.tac-grid-bg {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/*
+  Events filmstrip — reuses the site's existing .carousel-track /
+  .carousel-item / .carousel-img keyframe-scroll animation (already
+  compiled into index.css from the original design), just adds a
+  positioned wrapper for a hover caption overlay on each frame.
+*/
+.carousel-item {
+  position: relative;
+}
+
+.tac-carousel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3, 5, 9, 0.2) 0%, rgba(3, 5, 9, 0.94) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  pointer-events: none;
+  transition: opacity 250ms ease;
+}
+
+/* ===== Events scrubber (manual pacing slider) ===== */
+
+.tac-scrubber {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: var(--tac-line-strong);
+  outline: none;
+  cursor: pointer;
+}
+
+.tac-scrubber::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: var(--tac-accent);
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.tac-scrubber::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: var(--tac-accent);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.tac-scrubber::-moz-range-track {
+  height: 2px;
+  background: var(--tac-line-strong);
+}
+
+/* Bigger frames than the original decorative strip — this is now the
+   primary Events section, not a background accent. */
+.carousel-item {
+  padding-right: 10px;
+}
+
+.carousel-img {
+  width: 320px;
+  height: 240px;
+}
+
+@media (min-width: 640px) {
+  .carousel-item { padding-right: 14px; }
+  .carousel-img { width: 460px; height: 340px; }
+}
+
+@media (min-width: 768px) {
+  .carousel-item { padding-right: 16px; }
+  .carousel-img { width: 600px; height: 420px; }
 }
 
 /* ===== Typography ===== */
@@ -267,46 +339,3 @@
   color: var(--tac-text-faint);
 }
 
-/* ===== Operations gallery ===== */
-
-.tac-gallery-item {
-  position: relative;
-  border: 1px solid var(--tac-line);
-  overflow: hidden;
-  background: var(--tac-black);
-  aspect-ratio: 4 / 3;
-}
-
-.tac-gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(0.35) contrast(1.05);
-  transition: filter 300ms ease, transform 400ms ease;
-}
-
-.tac-gallery-item:hover img {
-  filter: grayscale(0) contrast(1.05);
-  transform: scale(1.04);
-}
-
-.tac-gallery-caption {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 0.85rem 1rem;
-  background: linear-gradient(to top, rgba(3, 5, 9, 0.95), rgba(3, 5, 9, 0));
-  transform: translateY(100%);
-  transition: transform 250ms ease;
-}
-
-.tac-gallery-item:hover .tac-gallery-caption {
-  transform: translateY(0);
-}
-
-.tac-gallery-caption span {
-  font-family: var(--tac-font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--tac-text);
-}

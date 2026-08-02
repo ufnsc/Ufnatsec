@@ -36,7 +36,7 @@ const recurringEvents = [
 
 export function GetInvolved() {
   return (
-    <section style={{ backgroundColor: 'var(--tac-navy)' }} className="py-12 md:py-20">
+    <section style={{ backgroundColor: 'var(--tac-navy)' }} className="py-12 md:py-20 tac-grid-bg">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <div className="tac-eyebrow mb-4">

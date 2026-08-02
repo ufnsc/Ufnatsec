@@ -56,7 +56,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-[#050d1a]">
-        <div className="tac-grid-overlay" aria-hidden="true" />
         <Navigation />
         <ScrollToTop />
         <AppRoutes />

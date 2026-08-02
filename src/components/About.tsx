@@ -32,7 +32,7 @@ export function About({ onGetInvolvedClick, onContactClick }: AboutProps) {
   return (
     <>
       {/* Header & Mission Statement */}
-      <section style={{ backgroundColor: 'var(--tac-navy)' }} className="py-12 md:py-20">
+      <section style={{ backgroundColor: 'var(--tac-navy)' }} className="py-12 md:py-20 tac-grid-bg">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <div className="tac-eyebrow mb-4">
@@ -54,7 +54,7 @@ export function About({ onGetInvolvedClick, onContactClick }: AboutProps) {
       </section>
 
       {/* Our Values */}
-      <section style={{ backgroundColor: 'var(--tac-navy-alt)' }} className="py-12 md:py-20">
+      <section style={{ backgroundColor: 'var(--tac-navy-alt)' }} className="py-12 md:py-20 tac-grid-bg">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <div className="tac-eyebrow mb-4">
@@ -83,7 +83,7 @@ export function About({ onGetInvolvedClick, onContactClick }: AboutProps) {
       </section>
 
       {/* Call to Action */}
-      <section style={{ backgroundColor: 'var(--tac-navy)' }} className="py-12 md:py-16">
+      <section style={{ backgroundColor: 'var(--tac-navy)' }} className="py-12 md:py-16 tac-grid-bg">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="tac-card" style={{ padding: '3rem', textAlign: 'center' }}>
             <h2 className="font-mono" style={{ color: 'var(--tac-text)', marginBottom: '1rem' }}>Ready to Make an Impact?</h2>
