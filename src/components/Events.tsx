@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Reveal } from './motion/Reveal';
 import img1 from '../../images/IMG_1491.JPG';
 import img2 from '../../images/IMG_5213.JPG';
 import img3 from '../../images/IMG_5434.JPG';
@@ -118,10 +119,14 @@ export function Events() {
     <section style={{ backgroundColor: 'var(--tac-navy)' }} className="py-16 md:py-24 relative z-10 tac-grid-bg">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div style={{ marginBottom: '3rem' }}>
-          <div className="tac-eyebrow mb-4">
-            <span className="tac-bracket">[</span> EVENTS <span className="tac-bracket">]</span>
-          </div>
-          <div className="tac-divider" />
+          <Reveal>
+            <div className="tac-eyebrow mb-4">
+              <span className="tac-bracket">[</span> EVENTS <span className="tac-bracket">]</span>
+            </div>
+          </Reveal>
+          <Reveal variant="line">
+            <div className="tac-divider" />
+          </Reveal>
         </div>
       </div>
 

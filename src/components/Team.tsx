@@ -8,6 +8,7 @@ import greciaImg from '../../images/grecia.jpeg';
 import landonImg from '../../images/landon.jpg';
 import ethanImg from '../../images/headshot tie.png';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Reveal } from './motion/Reveal';
 
 const officers = [
   {
@@ -80,13 +81,19 @@ export function Team() {
     <section style={{ backgroundColor: 'var(--tac-navy-alt)' }} className="py-12 md:py-20 tac-grid-bg">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <div className="tac-eyebrow mb-4">
-            <span className="tac-bracket">[</span> LEADERSHIP <span className="tac-bracket">]</span>
-          </div>
-          <div className="tac-divider mb-6" />
-          <p className="tac-sans" style={{ color: 'var(--tac-text-dim)', fontSize: '1.1rem', maxWidth: '40rem' }}>
-            Meet the dedicated team driving UF NatSec's mission forward.
-          </p>
+          <Reveal>
+            <div className="tac-eyebrow mb-4">
+              <span className="tac-bracket">[</span> LEADERSHIP <span className="tac-bracket">]</span>
+            </div>
+          </Reveal>
+          <Reveal variant="line">
+            <div className="tac-divider mb-6" />
+          </Reveal>
+          <Reveal delay={80}>
+            <p className="tac-sans" style={{ color: 'var(--tac-text-dim)', fontSize: '1.1rem', maxWidth: '40rem' }}>
+              Meet the dedicated team driving UF NatSec's mission forward.
+            </p>
+          </Reveal>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
@@ -95,8 +102,8 @@ export function Team() {
             const hasInterests = Boolean(officer.interests);
 
             return (
+              <Reveal key={index} variant="fade" delay={Math.min(index * 60, 300)}>
               <div
-                key={index}
                 onMouseEnter={() => hasInterests && setHoveredIndex(index)}
                 onMouseLeave={() => hasInterests && setHoveredIndex((current) => (current === index ? null : current))}
                 onFocus={() => hasInterests && setHoveredIndex(index)}
@@ -156,6 +163,7 @@ export function Team() {
                   </div>
                 )}
               </div>
+              </Reveal>
             );
           })}
         </div>

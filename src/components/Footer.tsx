@@ -1,5 +1,6 @@
 import { Linkedin, Instagram, Mail } from 'lucide-react';
 import { FaSlack } from 'react-icons/fa';
+import { Reveal } from './motion/Reveal';
 
 export function Footer() {
   return (
@@ -7,14 +8,16 @@ export function Footer() {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8" style={{ paddingTop: '2.5rem', paddingBottom: '2.5rem' }}>
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Tagline */}
-          <div className="text-center md:text-left">
-            <span className="tac-mono" style={{ color: 'var(--tac-accent)', fontWeight: 700, letterSpacing: '0.1em' }}>
-              UF NSC
-            </span>
-            <p className="tac-sans text-sm mt-1" style={{ color: 'var(--tac-text-faint)' }}>
-              Building Tomorrow's National Security Leaders.
-            </p>
-          </div>
+          <Reveal variant="fade" className="text-center md:text-left">
+            <div>
+              <span className="tac-mono" style={{ color: 'var(--tac-accent)', fontWeight: 700, letterSpacing: '0.1em' }}>
+                UF NSC
+              </span>
+              <p className="tac-sans text-sm mt-1" style={{ color: 'var(--tac-text-faint)' }}>
+                Building Tomorrow's National Security Leaders.
+              </p>
+            </div>
+          </Reveal>
 
           {/* Social Icons */}
           <div className="flex items-center gap-3">

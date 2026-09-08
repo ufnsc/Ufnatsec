@@ -1,4 +1,6 @@
 import { Shield, Users, Lightbulb, Heart } from 'lucide-react';
+import { Reveal } from './motion/Reveal';
+import { RevealHeading } from './motion/RevealHeading';
 
 interface AboutProps {
   onGetInvolvedClick: () => void;
@@ -35,21 +37,29 @@ export function About({ onGetInvolvedClick, onContactClick }: AboutProps) {
       <section style={{ backgroundColor: 'var(--tac-navy)' }} className="py-12 md:py-20 tac-grid-bg">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <div className="tac-eyebrow mb-4">
-              <span className="tac-bracket">[</span> ABOUT <span className="tac-bracket">]</span>
-            </div>
-            <div className="tac-divider mb-6" />
-            <p className="tac-sans" style={{ color: 'var(--tac-text-dim)', fontSize: '1.1rem', maxWidth: '40rem' }}>
-              Building the future of national security through education, collaboration, and innovation.
-            </p>
+            <Reveal>
+              <div className="tac-eyebrow mb-4">
+                <span className="tac-bracket">[</span> ABOUT <span className="tac-bracket">]</span>
+              </div>
+            </Reveal>
+            <Reveal variant="line">
+              <div className="tac-divider mb-6" />
+            </Reveal>
+            <Reveal delay={80}>
+              <p className="tac-sans" style={{ color: 'var(--tac-text-dim)', fontSize: '1.1rem', maxWidth: '40rem' }}>
+                Building the future of national security through education, collaboration, and innovation.
+              </p>
+            </Reveal>
           </div>
 
-          <div className="tac-card" style={{ padding: '2.5rem' }}>
-            <div className="tac-tag mb-6">Our Mission</div>
-            <p className="tac-sans" style={{ color: 'var(--tac-text)', fontSize: '1.15rem', lineHeight: 1.75, maxWidth: '52rem' }}>
-              NSC provides a multidisciplinary forum for students from all majors who are curious or passionate about national security. Our mission is to destigmatize conversations around defense and security, create networking opportunities, foster mentorship, and inspire innovation. Through discussions with peers and professionals, we aim to broaden understanding of critical national security challenges and prepare the next generation of leaders to tackle emerging issues at the intersection of engineering, policy, and beyond.
-            </p>
-          </div>
+          <Reveal variant="fade">
+            <div className="tac-card" style={{ padding: '2.5rem' }}>
+              <div className="tac-tag mb-6">Our Mission</div>
+              <p className="tac-sans" style={{ color: 'var(--tac-text)', fontSize: '1.15rem', lineHeight: 1.75, maxWidth: '52rem' }}>
+                NSC provides a multidisciplinary forum for students from all majors who are curious or passionate about national security. Our mission is to destigmatize conversations around defense and security, create networking opportunities, foster mentorship, and inspire innovation. Through discussions with peers and professionals, we aim to broaden understanding of critical national security challenges and prepare the next generation of leaders to tackle emerging issues at the intersection of engineering, policy, and beyond.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -57,25 +67,31 @@ export function About({ onGetInvolvedClick, onContactClick }: AboutProps) {
       <section style={{ backgroundColor: 'var(--tac-navy-alt)' }} className="py-12 md:py-20 tac-grid-bg">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <div className="tac-eyebrow mb-4">
-              <span className="tac-bracket">[</span> VALUES <span className="tac-bracket">]</span>
-            </div>
-            <div className="tac-divider" />
+            <Reveal>
+              <div className="tac-eyebrow mb-4">
+                <span className="tac-bracket">[</span> VALUES <span className="tac-bracket">]</span>
+              </div>
+            </Reveal>
+            <Reveal variant="line">
+              <div className="tac-divider" />
+            </Reveal>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
-                <div key={index} className="tac-card" style={{ padding: '2rem', textAlign: 'center' }}>
-                  <div className="tac-icon-box" style={{ margin: '0 auto 1.25rem' }}>
-                    <Icon style={{ color: 'var(--tac-accent)' }} size={24} />
+                <Reveal key={index} variant="fade" delay={Math.min(index * 70, 280)}>
+                  <div className="tac-card" style={{ padding: '2rem', textAlign: 'center' }}>
+                    <div className="tac-icon-box" style={{ margin: '0 auto 1.25rem' }}>
+                      <Icon style={{ color: 'var(--tac-accent)' }} size={24} />
+                    </div>
+                    <h3 className="font-mono" style={{ color: 'var(--tac-text)', marginBottom: '0.75rem' }}>{value.title}</h3>
+                    <p className="tac-sans text-sm" style={{ color: 'var(--tac-text-dim)', lineHeight: 1.6 }}>
+                      {value.description}
+                    </p>
                   </div>
-                  <h3 className="font-mono" style={{ color: 'var(--tac-text)', marginBottom: '0.75rem' }}>{value.title}</h3>
-                  <p className="tac-sans text-sm" style={{ color: 'var(--tac-text-dim)', lineHeight: 1.6 }}>
-                    {value.description}
-                  </p>
-                </div>
+                </Reveal>
               );
             })}
           </div>
@@ -86,18 +102,27 @@ export function About({ onGetInvolvedClick, onContactClick }: AboutProps) {
       <section style={{ backgroundColor: 'var(--tac-navy)' }} className="py-12 md:py-16 tac-grid-bg">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="tac-card" style={{ padding: '3rem', textAlign: 'center' }}>
-            <h2 className="font-mono" style={{ color: 'var(--tac-text)', marginBottom: '1rem' }}>Ready to Make an Impact?</h2>
-            <p className="tac-sans" style={{ color: 'var(--tac-text-dim)', fontSize: '1.1rem', marginBottom: '2rem', maxWidth: '36rem', marginLeft: 'auto', marginRight: 'auto' }}>
-              Join UF NSC and become part of a community dedicated to shaping the future of national security.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={onGetInvolvedClick} className="tac-btn tac-btn-primary">
-                Get Involved
-              </button>
-              <button onClick={onContactClick} className="tac-btn tac-btn-outline">
-                Contact Us
-              </button>
-            </div>
+            <RevealHeading
+              as="h2"
+              lines={['Ready to Make an Impact?']}
+              className="font-mono"
+              style={{ color: 'var(--tac-text)', marginBottom: '1rem' }}
+            />
+            <Reveal delay={200}>
+              <p className="tac-sans" style={{ color: 'var(--tac-text-dim)', fontSize: '1.1rem', marginBottom: '2rem', maxWidth: '36rem', marginLeft: 'auto', marginRight: 'auto' }}>
+                Join UF NSC and become part of a community dedicated to shaping the future of national security.
+              </p>
+            </Reveal>
+            <Reveal variant="fade" delay={280}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onClick={onGetInvolvedClick} className="tac-btn tac-btn-primary">
+                  Get Involved
+                </button>
+                <button onClick={onContactClick} className="tac-btn tac-btn-outline">
+                  Contact Us
+                </button>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>

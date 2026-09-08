@@ -1,19 +1,27 @@
 import { Download, Heart } from 'lucide-react';
+import { Reveal } from './motion/Reveal';
 
 export function Sponsor() {
   return (
     <section style={{ backgroundColor: 'var(--tac-navy-alt)' }} className="py-12 md:py-20 tac-grid-bg">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <div className="tac-eyebrow mb-4">
-            <span className="tac-bracket">[</span> SPONSOR US <span className="tac-bracket">]</span>
-          </div>
-          <div className="tac-divider mb-6" />
-          <p className="tac-sans" style={{ color: 'var(--tac-text-dim)', fontSize: '1.1rem', maxWidth: '40rem' }}>
-            Your support enables NSC to educate, inspire, and connect students with national security professionals and opportunities.
-          </p>
+          <Reveal>
+            <div className="tac-eyebrow mb-4">
+              <span className="tac-bracket">[</span> SPONSOR US <span className="tac-bracket">]</span>
+            </div>
+          </Reveal>
+          <Reveal variant="line">
+            <div className="tac-divider mb-6" />
+          </Reveal>
+          <Reveal delay={80}>
+            <p className="tac-sans" style={{ color: 'var(--tac-text-dim)', fontSize: '1.1rem', maxWidth: '40rem' }}>
+              Your support enables NSC to educate, inspire, and connect students with national security professionals and opportunities.
+            </p>
+          </Reveal>
         </div>
 
+        <Reveal variant="fade">
         <div className="tac-card overflow-hidden">
           <div className="p-8 md:p-12 lg:p-16">
             <div className="max-w-3xl mx-auto text-center">
@@ -65,6 +73,7 @@ export function Sponsor() {
             </div>
           </div>
         </div>
+        </Reveal>
       </div>
     </section>
   );

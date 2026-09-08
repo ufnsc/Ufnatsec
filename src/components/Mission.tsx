@@ -1,3 +1,5 @@
+import { Reveal } from './motion/Reveal';
+
 interface MissionProps {
   onLearnMoreClick?: () => void;
 }
@@ -19,36 +21,46 @@ export function Mission({ onLearnMoreClick }: MissionProps) {
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div style={{ marginBottom: '2.5rem' }}>
-          <div className="tac-eyebrow mb-4">
-            <span className="tac-bracket">[</span> MISSION <span className="tac-bracket">]</span>
-          </div>
-          <div className="tac-divider" />
+          <Reveal>
+            <div className="tac-eyebrow mb-4">
+              <span className="tac-bracket">[</span> MISSION <span className="tac-bracket">]</span>
+            </div>
+          </Reveal>
+          <Reveal variant="line">
+            <div className="tac-divider" />
+          </Reveal>
         </div>
 
         <div className="tac-card" style={{ padding: '2.5rem', maxWidth: '52rem' }}>
-          <p className="tac-sans" style={{ color: 'var(--tac-text)', fontSize: '1.05rem', lineHeight: 1.7 }}>
-            NSC aims to cultivate a multidisciplinary community of students interested in national
-            security by providing access to professionals and opportunities that develop their
-            skills and empower them to become emerging leaders.
-          </p>
-          <p
-            className="tac-sans"
-            style={{ color: 'var(--tac-text-dim)', fontSize: '1.05rem', lineHeight: 1.7, marginTop: '1.25rem' }}
-          >
-            We bring that mission to life through hands-on workshops that build real-world skills,
-            competitive events where students tackle live national security challenges, and a guest
-            speaker series featuring professionals from across the defense, intelligence, and policy
-            sectors.
-          </p>
+          <Reveal>
+            <p className="tac-sans" style={{ color: 'var(--tac-text)', fontSize: '1.05rem', lineHeight: 1.7 }}>
+              NSC aims to cultivate a multidisciplinary community of students interested in national
+              security by providing access to professionals and opportunities that develop their
+              skills and empower them to become emerging leaders.
+            </p>
+          </Reveal>
+          <Reveal delay={80}>
+            <p
+              className="tac-sans"
+              style={{ color: 'var(--tac-text-dim)', fontSize: '1.05rem', lineHeight: 1.7, marginTop: '1.25rem' }}
+            >
+              We bring that mission to life through hands-on workshops that build real-world skills,
+              competitive events where students tackle live national security challenges, and a guest
+              speaker series featuring professionals from across the defense, intelligence, and policy
+              sectors.
+            </p>
+          </Reveal>
 
           {onLearnMoreClick && (
-            <button
-              onClick={onLearnMoreClick}
-              className="tac-btn tac-btn-outline"
-              style={{ marginTop: '2rem' }}
-            >
-              Learn More
-            </button>
+            <Reveal variant="fade" delay={160}>
+              <button
+                onClick={onLearnMoreClick}
+                className="tac-btn tac-btn-outline"
+                style={{ marginTop: '2rem' }}
+              >
+                Learn More
+              </button>
+            </Reveal>
           )}
         </div>
       </div>
