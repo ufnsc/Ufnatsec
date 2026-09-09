@@ -1,127 +1,171 @@
+import { useState } from 'react';
+import paigeImg from '../../images/paige.jpg';
 import josephImg from '../../images/joseph.png';
 import eliImg from '../../images/eli.png';
 import larissaImg from '../../images/larissa2.jpg';
 import rishiImg from '../../images/rishi.png';
 import greciaImg from '../../images/grecia.jpeg';
 import landonImg from '../../images/landon.jpg';
-import cyberTech2Img from '../../images/cybertech2.jpg';
+import ethanImg from '../../images/headshot tie.png';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Reveal } from './motion/Reveal';
 
 const officers = [
   {
+    name: 'Paige Anderson',
+    title: 'Co-President',
+    bio: 'Graduate Student, Nuclear Engineering',
+    interests: 'Enjoys doing research in defense.',
+    image: paigeImg,
+  },
+  {
     name: 'Joseph Starr',
-    title: 'President',
+    title: 'Co-President',
     bio: 'Senior, Electrical Engineering',
+    interests: 'Interested in defense work and enjoys tinkering with Arduinos.',
     image: josephImg,
   },
   {
     name: 'Eli Ergas',
     title: 'Vice President',
     bio: 'Sophomore, Electrical Engineering',
+    interests: 'Enjoys playing football and aspires to become an electrical engineer.',
     image: eliImg,
   },
   {
     name: 'Larissa Yaksic',
     title: '',
     bio: 'Junior, Electrical Engineering',
+    interests: 'Passionate about teaching others national security awareness.',
     image: larissaImg,
   },
   {
     name: 'Rishi Jadala',
     title: '',
     bio: 'Sophomore, Electrical Engineering',
+    interests: 'Loves soccer and is currently doing EE research.',
     image: rishiImg,
   },
   {
     name: 'Grecia Perez',
     title: '',
     bio: 'Sophomore, Computer Science',
+    interests: 'Has a passion for national security.',
     image: greciaImg,
   },
   {
     name: 'Landon Amaba',
     title: '',
     bio: 'Senior, Electrical Engineering',
+    interests: 'Passionate about public speaking and enjoys giving presentations.',
     image: landonImg,
+  },
+  {
+    name: 'Ethan Ahmed',
+    title: '',
+    bio: 'Junior, Computer Science',
+    interests: 'Enjoys coding and is interested in national security work.',
+    image: ethanImg,
   },
 ];
 
 export function Team() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [pinnedIndex, setPinnedIndex] = useState<number | null>(null);
+
+  const togglePinned = (index: number) => {
+    setPinnedIndex((current) => (current === index ? null : index));
+  };
+
   return (
-    <section id="team" className="relative py-12 md:py-20 overflow-hidden" style={{ backgroundColor: '#0a1628' }}>
-
-      {/* Blurred background image */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url(${cyberTech2Img})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(10px)',
-          transform: 'scale(1.08)',
-          opacity: 0.18,
-        }}
-      />
-
-      {/* Radial gradient — solid centre, soft feathered edge into image */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: `radial-gradient(ellipse 72% 68% at center,
-            #0a1628 0%,
-            #0a1628 36%,
-            rgba(10,22,40,0.97) 48%,
-            rgba(10,22,40,0.80) 60%,
-            rgba(10,22,40,0.45) 74%,
-            rgba(10,22,40,0.12) 88%,
-            transparent 100%)`,
-        }}
-      />
-
-      <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+    <section style={{ backgroundColor: 'var(--tac-navy-alt)' }} className="py-12 md:py-20 tac-grid-bg">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <div className="flex flex-col items-center">
-            <h2 className="font-mono text-white text-center text-3xl md:text-5xl font-bold tracking-[0.12em] uppercase">
-              OUR LEADERSHIP
-            </h2>
-            <div
-              className="mt-10 rounded-full"
-              style={{
-                width: '28rem',
-                maxWidth: '72vw',
-                height: '3px',
-                backgroundColor: '#FA4616',
-                boxShadow: '0 0 12px rgba(250, 70, 22, 0.3)',
-              }}
-            />
-          </div>
-          <p className="text-[#94a3b8] max-w-2xl mx-auto text-center text-lg mt-8">
-            Meet the dedicated team driving UF NatSec's mission forward.
-          </p>
+          <Reveal>
+            <div className="tac-eyebrow mb-4">
+              <span className="tac-bracket">[</span> LEADERSHIP <span className="tac-bracket">]</span>
+            </div>
+          </Reveal>
+          <Reveal variant="line">
+            <div className="tac-divider mb-6" />
+          </Reveal>
+          <Reveal delay={80}>
+            <p className="tac-sans" style={{ color: 'var(--tac-text-dim)', fontSize: '1.1rem', maxWidth: '40rem' }}>
+              Meet the dedicated team driving UF NatSec's mission forward.
+            </p>
+          </Reveal>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
-          {officers.map((officer, index) => (
-            <div
-              key={index}
-              className="bg-[#050d1a] border border-[#1e3a5f] rounded-2xl p-6 text-center hover:shadow-lg hover:shadow-[#3b82f6]/5 transition-shadow"
-            >
-              <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-[#0d1f3c] border-4 border-[#3b82f6]/30">
-                <ImageWithFallback
-                  src={officer.image}
-                  alt={officer.name}
-                  className="w-full h-full object-cover"
-                />
+          {officers.map((officer, index) => {
+            const isOpen = hoveredIndex === index || pinnedIndex === index;
+            const hasInterests = Boolean(officer.interests);
+
+            return (
+              <Reveal key={index} variant="fade" delay={Math.min(index * 60, 300)}>
+              <div
+                onMouseEnter={() => hasInterests && setHoveredIndex(index)}
+                onMouseLeave={() => hasInterests && setHoveredIndex((current) => (current === index ? null : current))}
+                onFocus={() => hasInterests && setHoveredIndex(index)}
+                onBlur={() => hasInterests && setHoveredIndex((current) => (current === index ? null : current))}
+                onClick={() => hasInterests && togglePinned(index)}
+                onKeyDown={(e) => {
+                  if (hasInterests && (e.key === 'Enter' || e.key === ' ')) {
+                    e.preventDefault();
+                    togglePinned(index);
+                  }
+                }}
+                role={hasInterests ? 'button' : undefined}
+                tabIndex={hasInterests ? 0 : undefined}
+                aria-expanded={hasInterests ? isOpen : undefined}
+                className="tac-card text-center"
+                style={{
+                  padding: '1.75rem',
+                  cursor: hasInterests ? 'pointer' : undefined,
+                  borderColor: isOpen ? 'var(--tac-line-strong)' : undefined,
+                  transition: 'border-color 150ms ease',
+                }}
+              >
+                <div
+                  className="w-32 h-32 mx-auto mb-4 overflow-hidden"
+                  style={{ border: '1px solid var(--tac-line)', backgroundColor: 'var(--tac-black)', borderRadius: '50%' }}
+                >
+                  <ImageWithFallback
+                    src={officer.image}
+                    alt={officer.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="font-mono mb-1" style={{ color: 'var(--tac-text)' }}>{officer.name}</h3>
+                {officer.title && (
+                  <p className="text-sm mb-2" style={{ color: 'var(--tac-accent)' }}>{officer.title}</p>
+                )}
+                {officer.bio && (
+                  <p className="tac-sans text-sm" style={{ color: 'var(--tac-text-dim)', lineHeight: 1.6 }}>
+                    {officer.bio}
+                  </p>
+                )}
+                {hasInterests && (
+                  <div
+                    className="overflow-hidden"
+                    style={{
+                      maxHeight: isOpen ? '160px' : '0px',
+                      opacity: isOpen ? 1 : 0,
+                      marginTop: isOpen ? '1rem' : '0px',
+                      paddingTop: isOpen ? '1rem' : '0px',
+                      borderTop: isOpen ? '1px solid var(--tac-line)' : '1px solid transparent',
+                      transition: 'max-height 300ms ease-out, opacity 300ms ease-out, margin-top 300ms ease-out, padding-top 300ms ease-out',
+                    }}
+                  >
+                    <p className="tac-sans text-sm" style={{ color: 'var(--tac-text-dim)', lineHeight: 1.6 }}>
+                      {officer.interests}
+                    </p>
+                  </div>
+                )}
               </div>
-              <h3 className="font-mono text-white mb-1">{officer.name}</h3>
-              {officer.title && (
-                <p className="text-[#FA4616] text-sm mb-2">{officer.title}</p>
-              )}
-              <p className="text-sm text-[#94a3b8] leading-relaxed">
-                {officer.bio}
-              </p>
-            </div>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

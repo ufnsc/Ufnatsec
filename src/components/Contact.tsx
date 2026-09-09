@@ -1,86 +1,64 @@
 import { Mail, Linkedin, Phone } from 'lucide-react';
+import { Reveal } from './motion/Reveal';
+
+const channels = [
+  { icon: Mail, label: 'Email', value: 'anderson.paige@ufl.edu', href: 'mailto:anderson.paige@ufl.edu' },
+  { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/company/ufnsc', href: 'https://linkedin.com/company/ufnsc', external: true },
+  { icon: Phone, label: 'Phone', value: '(614) 832-6794', href: 'tel:+16148326794' },
+];
 
 export function Contact() {
   return (
-    <section id="contact" className="bg-[#0a1628] py-12 md:py-20">
+    <section style={{ backgroundColor: 'var(--tac-navy-alt)' }} className="py-12 md:py-20 tac-grid-bg">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <div className="flex flex-col items-center">
-            <h2 className="font-mono text-white text-center text-3xl md:text-5xl font-bold tracking-[0.12em] uppercase">
-              CONTACT US
-            </h2>
-            <div
-              className="mt-10 rounded-full"
-              style={{
-                width: '28rem',
-                maxWidth: '72vw',
-                height: '3px',
-                backgroundColor: '#FA4616',
-                boxShadow: '0 0 12px rgba(250, 70, 22, 0.3)',
-              }}
-            />
-          </div>
-          <p className="text-[#94a3b8] max-w-2xl mx-auto text-center text-lg mt-8">
-            Have questions or want to learn more? We'd love to hear from you.
-          </p>
+          <Reveal>
+            <div className="tac-eyebrow mb-4">
+              <span className="tac-bracket">[</span> CONTACT <span className="tac-bracket">]</span>
+            </div>
+          </Reveal>
+          <Reveal variant="line">
+            <div className="tac-divider mb-6" />
+          </Reveal>
+          <Reveal delay={80}>
+            <p className="tac-sans" style={{ color: 'var(--tac-text-dim)', fontSize: '1.1rem', maxWidth: '40rem' }}>
+              Have questions or want to learn more? We'd love to hear from you.
+            </p>
+          </Reveal>
         </div>
 
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-[#0a1628] border border-[#1e3a5f] rounded-2xl p-6 md:p-8 shadow-lg">
-            <div className="bg-[#0d1f3c] border border-[#1e3a5f] rounded-xl p-4 mb-6">
-              <h3 className="font-mono text-white text-center">Get in Touch</h3>
-            </div>
+        <Reveal variant="fade">
+          <div className="max-w-2xl mx-auto tac-card" style={{ padding: '2rem' }}>
+            <div className="tac-tag mb-6">Get in Touch</div>
 
             <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-[#3b82f6]/10 border border-[#1e3a5f]">
-                  <Mail className="text-[#3b82f6]" size={20} />
-                </div>
-                <div>
-                  <p className="text-white mb-1">Email</p>
-                  <a
-                    href="mailto:anderson.paige@ufl.edu"
-                    className="text-[#3b82f6] hover:underline"
-                  >
-                    anderson.paige@ufl.edu
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-[#3b82f6]/10 border border-[#1e3a5f]">
-                  <Linkedin className="text-[#3b82f6]" size={20} />
-                </div>
-                <div>
-                  <p className="text-white mb-1">LinkedIn</p>
-                  <a
-                    href="https://linkedin.com/company/ufnsc"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#3b82f6] hover:underline"
-                  >
-                    linkedin.com/company/ufnsc
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-[#3b82f6]/10 border border-[#1e3a5f]">
-                  <Phone className="text-[#3b82f6]" size={20} />
-                </div>
-                <div>
-                  <p className="text-white mb-1">Phone</p>
-                  <a
-                    href="tel:+16148326794"
-                    className="text-[#3b82f6] hover:underline"
-                  >
-                    (614) 832-6794
-                  </a>
-                </div>
-              </div>
+              {channels.map((channel, index) => {
+                const Icon = channel.icon;
+                return (
+                  <Reveal key={channel.label} variant="fade" delay={Math.min(index * 70, 210)}>
+                    <div className="flex items-start gap-4">
+                      <div className="tac-icon-box">
+                        <Icon style={{ color: 'var(--tac-accent)' }} size={18} />
+                      </div>
+                      <div>
+                        <p className="mb-1" style={{ color: 'var(--tac-text)' }}>{channel.label}</p>
+                        <a
+                          href={channel.href}
+                          target={channel.external ? '_blank' : undefined}
+                          rel={channel.external ? 'noopener noreferrer' : undefined}
+                          className="hover:underline"
+                          style={{ color: 'var(--tac-accent)' }}
+                        >
+                          {channel.value}
+                        </a>
+                      </div>
+                    </div>
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
